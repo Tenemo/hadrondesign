@@ -1,0 +1,45 @@
+DB
+1/5
+
+------------------------------
+server
+3/5
+local wamp, apache
+
+------------------------------
+hosting
+3/5
+
+
+------------------------------
+Javascript
+4/5
+i18n, localization, i18next
+
+------------------------------
+frameworks
+3/5
+d3.js
+react.js
+angular 4
+
+------------------------------
+HTML/CSS
+5/5
+bootstrap 3 & 4
+
+
+------------------------------
+graphics/design
+5/5
+
+
+
+
+OUTSIDE
+C++
+C#
+Python, django
+
+
+
