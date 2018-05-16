@@ -5,7 +5,10 @@
     "scripts": {
         "start-message": "babel-node config/startMessage.js",
         "prestart": "npm run start-message",
-        "start": "babel-node config/srcServer.js"
+        "start": "concurrently -k \"npm run open:src\" \"npm run lint:watch\"",
+        "open:src": "babel-node config/srcServer.js",
+        "lint": "node_modules/.bin/esw config/webpack.* src config",
+        "lint:watch": "npm run lint -- --watch"
     },
     "repository": {
         "type": "git",
@@ -35,11 +38,13 @@
         "babel-preset-stage-1": "^6.24.1",
         "browser-sync": "^2.24.4",
         "chalk": "^2.4.1",
+        "concurrently": "^3.5.1",
         "connect-history-api-fallback": "^1.5.0",
         "css-loader": "^0.28.11",
         "eslint": "^4.19.1",
         "eslint-plugin-import": "^2.11.0",
         "eslint-plugin-react": "^7.8.2",
+        "eslint-watch": "^3.1.4",
         "eventsource-polyfill": "^0.9.6",
         "file-loader": "^1.1.11",
         "react-hot-loader": "^4.1.3",
