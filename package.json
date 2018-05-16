@@ -8,7 +8,8 @@
         "start": "concurrently -k \"npm run open:src\" \"npm run lint:watch\"",
         "open:src": "babel-node config/srcServer.js",
         "lint": "node_modules/.bin/esw config/webpack.* src config",
-        "lint:watch": "npm run lint -- --watch"
+        "lint:watch": "npm run lint -- --watch",
+        "test": "jest"
     },
     "repository": {
         "type": "git",
@@ -47,6 +48,8 @@
         "eslint-watch": "^3.1.4",
         "eventsource-polyfill": "^0.9.6",
         "file-loader": "^1.1.11",
+        "jest": "^22.4.3",
+        "jest-cli": "^22.4.3",
         "react-hot-loader": "^4.1.3",
         "style-loader": "^0.21.0",
         "url-loader": "^1.0.1",

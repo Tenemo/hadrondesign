@@ -32,24 +32,30 @@ export default {
     module: {
         rules: [
             {
-                test: /\.js$/,
-                include: path.join(__dirname, 'src'),
-                use: ['babel']},
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            },
             {
                 test: /(\.css)$/,
-                use: ['style', 'css']},
+                use: ['style', 'css']
+            },
             {
                 test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'file'},
+                loader: 'file'
+            },
             {
                 test: /\.(woff|woff2)$/,
-                loader: 'url?prefix=font/&limit=5000'},
+                loader: 'url?prefix=font/&limit=5000'
+            },
             {
                 test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url?limit=10000&mimetype=application/octet-stream'},
+                loader: 'url?limit=10000&mimetype=application/octet-stream'
+            },
             {
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url?limit=10000&mimetype=image/svg+xml'}
+                loader: 'url?limit=10000&mimetype=image/svg+xml'
+            }
         ]
     }
 };
