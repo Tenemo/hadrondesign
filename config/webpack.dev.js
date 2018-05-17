@@ -1,5 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export default {
     resolve: {
@@ -9,7 +11,8 @@ export default {
     entry: [
         'eventsource-polyfill', // necessary for hot reloading with IE
         'react-hot-loader/patch',
-        'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
+        'webpack-hot-middleware/client',
+        // 'webpack-hot-middleware/client?reload=true',
         path.resolve(__dirname, '../src/index.js')
     ],
     target: 'web',
@@ -25,24 +28,36 @@ export default {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
-        // new webpack.LoaderOptionsPlugin({
-        //     debug: true
-        // })
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[id].css'
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/index.pug',
+            title: 'Piotr Piech',
+            filename: 'index.html',
+            inject: 'true'
+        }),
     ],
     module: {
         rules: [
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                use: ['babel-loader']
+                use: 'babel-loader'
+            },
+            {
+                test: /\.pug$/,
+                use: 'pug-loader'
             },
             {
                 test: /(\.css|\.scss|\.sass)$/,
                 use: [
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
+                            minimize: false,
                             sourceMap: true
                         }
                     }, {
@@ -63,56 +78,56 @@ export default {
                 ]
             },
             {
-                test: /\.(jpe?g|png|gif|ico)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]'
-                        }
-                    }
-                ]
-            },
+    test: /\.(jpe?g|png|gif|ico)$/i,
+        use: [
             {
-                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'file'
-            },
-            {
-                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 10000,
-                            mimetype: 'application/font-woff'
-                        }
-                    }
-                ]
-            },
-            {
-                test: /\.[ot]tf(\?v=\d+.\d+.\d+)?$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 10000,
-                            mimetype: 'application/octet-stream'
-                        }
-                    }
-                ]
-            },
-            {
-                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 10000,
-                            mimetype: 'image/svg+xml'
-                        }
-                    }
-                ]
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]'
+                }
             }
+        ]
+},
+{
+    test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file'
+},
+{
+    test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: [
+            {
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    mimetype: 'application/font-woff'
+                }
+            }
+        ]
+},
+{
+    test: /\.[ot]tf(\?v=\d+.\d+.\d+)?$/,
+        use: [
+            {
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    mimetype: 'application/octet-stream'
+                }
+            }
+        ]
+},
+{
+    test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+            {
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    mimetype: 'image/svg+xml'
+                }
+            }
+        ]
+}
         ]
     }
 };
