@@ -29,16 +29,16 @@ browserSync({
                 // These settings suppress noisy webpack output so only errors are displayed to the console.
                 noInfo: true,
                 quiet: false,
-                // stats: {
-                //     assets: false,
-                //     colors: true,
-                //     version: false,
-                //     hash: false,
-                //     timings: false,
-                //     chunks: false,
-                //     chunkModules: false
-                // },
-                stats: 'minimal'
+                stats: {
+                    assets: false,
+                    colors: true,
+                    version: false,
+                    hash: false,
+                    timings: false,
+                    chunks: false,
+                    chunkModules: false
+                }
+                //stats: 'warning'
 
                 // for other settings see
                 // https://webpack.js.org/guides/development/#using-webpack-dev-middleware

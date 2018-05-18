@@ -1,3 +1,8 @@
+@import 'fonts';
+@import 'variables';
+
 body {
-    background-color: aquamarine;
+    background-color: $primary-bg;
+    font: 14px $primary-font;
+    color: $primary-color;
 }

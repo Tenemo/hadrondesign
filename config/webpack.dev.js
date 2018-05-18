@@ -13,7 +13,7 @@ export default {
         'react-hot-loader/patch',
         'webpack-hot-middleware/client',
         // 'webpack-hot-middleware/client?reload=true',
-        path.resolve(__dirname, '../src/index.js')
+        path.resolve(__dirname, '../src/index.jsx')
     ],
     target: 'web',
     mode: 'development',
@@ -26,6 +26,12 @@ export default {
         contentBase: path.resolve(__dirname, 'src'),
     },
     plugins: [
+        new webpack.ProvidePlugin({
+            React: 'react',
+            $: 'jquery',
+            jQuery: 'jquery',
+            Popper: 'popper.js/dist/umd/popper' // https://github.com/FezVrasta/bootstrap-material-design/issues/1296
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
         new MiniCssExtractPlugin({
@@ -78,56 +84,56 @@ export default {
                 ]
             },
             {
-    test: /\.(jpe?g|png|gif|ico)$/i,
-        use: [
+                test: /\.(jpe?g|png|gif|ico)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]'
+                        }
+                    }
+                ]
+            },
             {
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]'
-                }
-            }
-        ]
-},
-{
-    test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file'
-},
-{
-    test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: [
+                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file'
+            },
             {
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                    mimetype: 'application/font-woff'
-                }
-            }
-        ]
-},
-{
-    test: /\.[ot]tf(\?v=\d+.\d+.\d+)?$/,
-        use: [
+                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10000,
+                            mimetype: 'application/font-woff'
+                        }
+                    }
+                ]
+            },
             {
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                    mimetype: 'application/octet-stream'
-                }
-            }
-        ]
-},
-{
-    test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
+                test: /\.[ot]tf(\?v=\d+.\d+.\d+)?$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10000,
+                            mimetype: 'application/octet-stream'
+                        }
+                    }
+                ]
+            },
             {
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                    mimetype: 'image/svg+xml'
-                }
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10000,
+                            mimetype: 'image/svg+xml'
+                        }
+                    }
+                ]
             }
-        ]
-}
         ]
     }
 };

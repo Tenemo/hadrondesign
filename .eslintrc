@@ -2,10 +2,14 @@
     "extends": [
         "eslint:recommended",
         "plugin:import/errors",
-        "plugin:import/warnings"
+        "plugin:import/recommended",
+        "plugin:import/react",
+        "plugin:import/warnings",
+        "plugin:react/recommended"
     ],
     "plugins": [
-        "react"
+        "react",
+        "import"
     ],
     "parserOptions": {
         "ecmaVersion": 6,
@@ -18,15 +22,33 @@
         "es6": true,
         "browser": true,
         "node": true,
-        "jquery": true,
-        "mocha": true
+        "jquery": true
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        }
+    },
+    "globals": {
+        "React": true
     },
     "rules": {
-        "quotes": [1, "single"],
+        "quotes": [
+            1,
+            "single"
+        ],
         "no-console": 1,
         "no-debugger": 1,
         "no-var": 1,
-        "semi": [1, "always"],
+        "semi": [
+            1,
+            "always"
+        ],
         "no-trailing-spaces": 1,
         "eol-last": 0,
         "no-unused-vars": 1,
@@ -34,8 +56,20 @@
         "no-alert": 2,
         "no-lone-blocks": 1,
         "jsx-quotes": 1,
-        "react/display-name": [ 1, {"ignoreTranspilerName": false }],
-        "react/forbid-prop-types": [1, {"forbid": ["any"]}],
+        "react/display-name": [
+            1,
+            {
+                "ignoreTranspilerName": false
+            }
+        ],
+        "react/forbid-prop-types": [
+            1,
+            {
+                "forbid": [
+                    "any"
+                ]
+            }
+        ],
         "react/jsx-boolean-value": 1,
         "react/jsx-closing-bracket-location": 0,
         "react/jsx-curly-spacing": 1,
@@ -60,7 +94,7 @@
         "react/no-unknown-property": 1,
         "react/prefer-es6-class": 1,
         "react/prop-types": 1,
-        "react/react-in-jsx-scope": 1,
+        "react/react-in-jsx-scope": 0,
         "react/self-closing-comp": 1,
         "react/sort-comp": 1
     }
