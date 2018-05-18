@@ -8,7 +8,7 @@ import './../node_modules/bootstrap-material-design/scss/_core.scss';
 import './styles/styles.scss';
 
 import App from './components/App'; //bugfixing
-import { Route, IndexRoute, Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import HomePage from './components/home/HomePage';
 import AboutPage from './components/about/AboutPage';
 
@@ -16,14 +16,13 @@ import AboutPage from './components/about/AboutPage';
 
 console.log('NODE_ENV = ' + process.env.NODE_ENV);
 console.log('index.js represent');
-
 // render(
 //     <Router history={browserHistory} routes={routes} />,
 //     document.getElementById('app')
 // );
 
 render(
-    <Router>
+    <Router history={browserHistory}>
         <div>
             <ul>
                 <li>

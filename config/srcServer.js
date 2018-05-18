@@ -30,15 +30,21 @@ browserSync({
                 noInfo: true,
                 quiet: false,
                 stats: {
-                    assets: false,
-                    colors: true,
-                    version: false,
                     hash: false,
+                    version: false,
                     timings: false,
+                    assets: false,
                     chunks: false,
-                    chunkModules: false
+                    modules: false,
+                    reasons: false,
+                    children: false,
+                    source: false,
+                    errors: false,
+                    errorDetails: false,
+                    warnings: false,
+                    publicPath: false
                 }
-                //stats: 'warning'
+                //stats: 'none'
 
                 // for other settings see
                 // https://webpack.js.org/guides/development/#using-webpack-dev-middleware

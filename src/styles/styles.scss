@@ -6,3 +6,11 @@ body {
     font: 14px $primary-font;
     color: $primary-color;
 }
+
+.jumbotron {
+    background-color: $secondary-color;
+}
+
+h1 {
+    color: blue !important;
+}

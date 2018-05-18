@@ -1,15 +1,17 @@
 {
     "extends": [
         "eslint:recommended",
-        "plugin:import/errors",
         "plugin:import/recommended",
-        "plugin:import/react",
         "plugin:import/warnings",
-        "plugin:react/recommended"
+        "plugin:import/errors",
+        "plugin:import/react",
+        "plugin:react/recommended",
+        "plugin:react-pug/all"
     ],
     "plugins": [
         "react",
-        "import"
+        "import",
+        "react-pug"
     ],
     "parserOptions": {
         "ecmaVersion": 6,

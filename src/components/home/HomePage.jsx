@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom';
 
 class HomePage extends React.Component {
-  render() {
-    return (
-      <div className="jumbotron">
-        <h1>Pluralsight Administration</h1>
-        <p>React, Redux and React Router in ES6 for ultra-responsive web apps.</p>
-        <Link to="about" className="btn btn-primary btn-lg">Learn more</Link>
-      </div>
-    );
-  }
+    render() {
+        return pug`
+            .jumbotron
+                h1 Pluralsight Administration
+                p React, Redux and React Router in ES6 for ultra-responsive web apps.
+                Link(to="about").btn.btn-primary.btn-lg Learn more
+    `;
+    }
 }
 
 export default HomePage;

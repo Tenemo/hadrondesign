@@ -34,10 +34,10 @@ export default {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
-        new MiniCssExtractPlugin({
-            filename: '[name].css',
-            chunkFilename: '[id].css'
-        }),
+        // new MiniCssExtractPlugin({
+        //     filename: '[name].css',
+        //     chunkFilename: '[id].css'
+        // }),
         new HtmlWebpackPlugin({
             template: 'src/index.pug',
             title: 'Piotr Piech',
@@ -59,7 +59,8 @@ export default {
             {
                 test: /(\.css|\.scss|\.sass)$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    //MiniCssExtractPlugin.loader,
+                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
