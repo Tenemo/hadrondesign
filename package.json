@@ -5,13 +5,13 @@
     "scripts": {
         "start-message": "babel-node config/startMessage.js",
         "prestart": "npm run start-message",
-        "start": "concurrently -k \"npm run open:src\" \"npm run lint:watch\"",
+        "start": "npm run lint&&concurrently -k -r -s first \"npm run test:watch\" \"npm run open:src\"",
         "open:src": "babel-node config/srcServer.js",
         "lint": "esw src config --ext js,jsx",
         "lint:watch": "npm run lint -- --watch",
         "test": "jest",
-        "debug": "set DEBUG=esw:*&& esw src -w --ext jsx",
-        "debug2": "esw src -w"
+        "test:watch": "jest --watch",
+        "test:coverage": "npm run test -- --coverage "
     },
     "repository": {
         "type": "git",
@@ -49,14 +49,18 @@
         "concurrently": "^3.5.1",
         "connect-history-api-fallback": "^1.5.0",
         "css-loader": "^0.28.11",
+        "enzyme": "^3.3.0",
+        "enzyme-adapter-react-16": "^1.1.1",
         "eslint": "^4.19.1",
         "eslint-plugin-import": "^2.12.0",
+        "eslint-plugin-jest": "^21.15.1",
         "eslint-plugin-react": "^7.8.2",
         "eslint-plugin-react-pug": "^0.3.1",
         "eslint-watch": "^3.1.4",
         "eventsource-polyfill": "^0.9.6",
         "file-loader": "^1.1.11",
         "html-webpack-plugin": "^3.2.0",
+        "identity-obj-proxy": "^3.0.0",
         "jest": "^22.4.3",
         "jest-cli": "^22.4.3",
         "mini-css-extract-plugin": "^0.4.0",
@@ -71,5 +75,11 @@
         "webpack": "^4.8.3",
         "webpack-dev-middleware": "^3.1.3",
         "webpack-hot-middleware": "^2.22.2"
+    },
+    "jest": {
+        "setupTestFrameworkScriptFile": "<rootDir>/config/enzymeSetup.js",
+        "moduleNameMapper": {
+            "^.+\\.(css|scss)$": "identity-obj-proxy"
+        }
     }
 }
