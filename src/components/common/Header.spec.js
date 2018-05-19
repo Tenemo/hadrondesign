@@ -1,12 +1,10 @@
 import React from 'react';
-import AboutPage from './AboutPage';
+import Header from './Header';
 
-describe('AboutPage', () => {
-    // it('should have an h1 About header', () => {
-    // });
+describe('App', () => {
     it('matches snapshot', () => {
         const wrapper = shallow(pug`
-            AboutPage
+            Header
         `);
         expect(wrapper).toMatchSnapshot();
     });

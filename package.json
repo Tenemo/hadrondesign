@@ -51,6 +51,7 @@
         "css-loader": "^0.28.11",
         "enzyme": "^3.3.0",
         "enzyme-adapter-react-16": "^1.1.1",
+        "enzyme-to-json": "^3.3.4",
         "eslint": "^4.19.1",
         "eslint-plugin-import": "^2.12.0",
         "eslint-plugin-jest": "^21.15.1",
@@ -80,6 +81,9 @@
         "setupTestFrameworkScriptFile": "<rootDir>/config/enzymeSetup.js",
         "moduleNameMapper": {
             "^.+\\.(css|scss)$": "identity-obj-proxy"
-        }
+        },
+        "snapshotSerializers": [
+            "enzyme-to-json/serializer"
+        ]
     }
 }
