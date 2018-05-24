@@ -7,7 +7,6 @@ import './../node_modules/bootstrap-material-design/scss/_core.scss';
 import './styles/styles.scss';
 
 console.log('NODE_ENV = ' + process.env.NODE_ENV);
-console.log('index.js represent');
 
 render((pug`
     BrowserRouter

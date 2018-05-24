@@ -5,5 +5,18 @@ exports[`App matches snapshot 1`] = `
   <h1>
     Flip 'Em
   </h1>
+  <h2>
+    New Game
+  </h2>
+  <input
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <input
+    onClick={[Function]}
+    type="submit"
+    value="Save"
+  />
 </div>
 `;
