@@ -1,22 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App matches snapshot 1`] = `
-<nav>
+<div
+  className="navbar navbar-expand-sm navbar-light bg-light navbar-nav"
+>
+  <Link
+    className="navbar-brand"
+    replace={false}
+    to="/"
+  >
+    HD
+  </Link>
   <NavLink
     activeClassName="active"
     ariaCurrent="true"
+    className="nav-item"
     exact={true}
     to="/"
   >
-    Home
+    <div
+      className="nav-link"
+    >
+      Home
+    </div>
   </NavLink>
    | 
   <NavLink
     activeClassName="active"
     ariaCurrent="true"
+    className="nav-item"
     to="/about"
   >
-    About
+    <div
+      className="nav-link"
+    >
+      About
+    </div>
   </NavLink>
-</nav>
+   | 
+  <NavLink
+    activeClassName="active"
+    ariaCurrent="true"
+    className="nav-item"
+    to="/game"
+  >
+    <div
+      className="nav-link"
+    >
+      Game
+    </div>
+  </NavLink>
+</div>
 `;

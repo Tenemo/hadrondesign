@@ -2,6 +2,7 @@
     "presets": ["env", "react", "stage-1"],
     "plugins": [
       "react-hot-loader/babel",
-      "transform-react-pug"
+      "transform-react-pug",
+      "transform-react-jsx-source"
     ]
 }

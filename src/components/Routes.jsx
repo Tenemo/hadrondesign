@@ -6,9 +6,9 @@ import GamePage from './game/GamePage';
 
 const Routes = () => (pug`
     Switch
-        Route(exact path="/" component=${HomePage})
-        Route(path="/about" component=${AboutPage})
-        Route(path="/game" component=${GamePage})
+        Route(exact path="/" component=HomePage)
+        Route(path="/about" component=AboutPage)
+        Route(path="/game" component=GamePage)
 `);
 
 export default Routes;

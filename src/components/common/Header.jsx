@@ -1,18 +1,18 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom'; // eslint-disable-line no-unused-vars
 
 const Header = () => {
     return (pug`
         .navbar.navbar-expand-sm.navbar-light.bg-light.navbar-nav
-            Link(exact to="/").navbar-brand HD
-            NavLink(exact to="/").nav-item
-                a.nav-link Home
+            Link(to="/").navbar-brand HD
+            NavLink(exact=true to="/").nav-item
+                .nav-link Home
             |  | 
             NavLink(to="/about").nav-item
-                a.nav-link About
+                .nav-link About
             |  | 
             NavLink(to="/game").nav-item
-                a.nav-link Game
+                .nav-link Game
             `
     );
 };
