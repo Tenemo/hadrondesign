@@ -23,8 +23,8 @@ export default function configureStore(initialState) {
         )
     );
     if (module.hot) {
-        module.hot.accept('../reducers/index.js', () => {
-            const nextReducer = require('../reducers/index.js').default;
+        module.hot.accept('../reducers', () => {
+            const nextReducer = require('../reducers').default;
             store.replaceReducer(nextReducer);
         });
     }

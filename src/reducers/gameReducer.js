@@ -4,8 +4,7 @@ export default function gameReducer(state = [], action) {
             return [...state,
                 Object.assign({}, action.game)
             ];
-
-            default:
-                return state;
+        default:
+            return state;
     }
 }

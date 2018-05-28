@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 
-describe('App', () => {
+describe('Header', () => {
     it('matches snapshot', () => {
         const wrapper = shallow(pug`
             Header

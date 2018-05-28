@@ -1,7 +1,7 @@
 import React from 'react';
-import GamePage from './GamePage';
+import { GamePage } from './GamePage';
 
-describe('App', () => {
+describe('GamePage', () => {
     it('matches snapshot', () => {
         const wrapper = shallow(pug`
             GamePage

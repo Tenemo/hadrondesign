@@ -6,7 +6,6 @@ import Root from './components/Root';
 import './../node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js';
 import './../node_modules/bootstrap-material-design/scss/_core.scss';
 import './styles/styles.scss';
-require('./favicon.ico');
 
 console.log('NODE_ENV = ' + process.env.NODE_ENV);
 

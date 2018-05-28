@@ -1,5 +1,8 @@
 import React from 'react';
-class GamePage extends React.Component {
+import { connect } from 'react-redux';
+import * as gameActions from '../../actions/gameActions';
+
+export class GamePage extends React.Component {
     constructor(props, context) {
         super(props, context);
 
@@ -14,11 +17,12 @@ class GamePage extends React.Component {
     onTitleChange(event) {
         const game = this.state.game;
         game.title = event.target.value;
-        this.setState({game: game });
+        this.setState({ game: game });
     }
 
     onClickSave() {
-        console.log(`Saving ${this.state.game.title}`);
+        this.props.dispatch(gameActions.newGame(this.state.course));
+        //console.log(`Saving ${this.state.game.title}`);
     }
 
     render() {
@@ -39,5 +43,11 @@ class GamePage extends React.Component {
         `;
     }
 }
-
-export default GamePage;
+function mapStateToProps(state) {
+    return {
+        games: state.games
+    };
+}
+export default connect(
+    mapStateToProps
+)(GamePage);

@@ -41,7 +41,8 @@ export default {
             template: 'src/index.pug',
             title: 'Piotr Piech',
             filename: 'index.html',
-            inject: 'true'
+            inject: 'true',
+            favicon: './src/favicon.ico'
         }),
     ],
     module: {
