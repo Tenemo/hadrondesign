@@ -14,22 +14,9 @@ exports[`Header matches snapshot 1`] = `
   <NavLink
     activeClassName="active"
     ariaCurrent="true"
-    className="nav-item"
+    class="nav-item"
     exact={true}
     to="/"
-  >
-    <div
-      className="nav-link"
-    >
-      Home
-    </div>
-  </NavLink>
-   | 
-  <NavLink
-    activeClassName="active"
-    ariaCurrent="true"
-    className="nav-item"
-    to="/about"
   >
     <div
       className="nav-link"
@@ -37,17 +24,40 @@ exports[`Header matches snapshot 1`] = `
       About
     </div>
   </NavLink>
-   | 
   <NavLink
     activeClassName="active"
     ariaCurrent="true"
-    className="nav-item"
+    class="nav-item"
+    to="/portfolio"
+  >
+    <div
+      className="nav-link"
+    >
+      Portfolio
+    </div>
+  </NavLink>
+  <NavLink
+    activeClassName="active"
+    ariaCurrent="true"
+    class="nav-item"
     to="/game"
   >
     <div
       className="nav-link"
     >
       Game
+    </div>
+  </NavLink>
+  <NavLink
+    activeClassName="active"
+    ariaCurrent="true"
+    class="nav-item"
+    to="/contact"
+  >
+    <div
+      className="nav-link"
+    >
+      Contact
     </div>
   </NavLink>
 </div>

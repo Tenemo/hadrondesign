@@ -1,12 +1,10 @@
 import React from 'react';
-import App from './App';
+import PortfolioPage from './PortfolioPage';
 
-describe('App', () => {
-    // it('should have an h1 About header', () => {
-    // });
+describe('PortfolioPage', () => {
     it('matches snapshot', () => {
         const wrapper = shallow(
-            <App />
+            <PortfolioPage />
         );
         expect(wrapper).toMatchSnapshot();
     });

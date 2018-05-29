@@ -1,14 +1,16 @@
-/* eslint no-unused-vars: 0 */
 import { Route, Switch } from 'react-router-dom';
-import HomePage from './home/HomePage';
 import AboutPage from './about/AboutPage';
+import PortfolioPage from './portfolio/PortfolioPage';
 import GamePage from './game/GamePage';
+import ContactPage from './contact/ContactPage';
 
-const Routes = () => (pug`
-    Switch
-        Route(exact path="/" component=HomePage)
-        Route(path="/about" component=AboutPage)
-        Route(path="/game" component=GamePage)
-`);
+const Routes = () => (
+    <Switch>
+        <Route exact path="/" component={AboutPage} />
+        <Route path="/portfolio" component={PortfolioPage} />
+        <Route path="/game" component={GamePage} />
+        <Route path="/contact" component={ContactPage} />
+    </Switch>
+);
 
 export default Routes;

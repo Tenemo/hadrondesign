@@ -3,9 +3,9 @@ import Header from './Header';
 
 describe('Header', () => {
     it('matches snapshot', () => {
-        const wrapper = shallow(pug`
-            Header
-        `);
+        const wrapper = shallow(
+            <Header />
+        );
         expect(wrapper).toMatchSnapshot();
     });
 });

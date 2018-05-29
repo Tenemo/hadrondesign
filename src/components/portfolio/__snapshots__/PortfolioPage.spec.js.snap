@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AboutPage matches snapshot 1`] = `
+exports[`PortfolioPage matches snapshot 1`] = `
 <div
   className="jumbotron"
 >
   <h1>
-    About
+    Portfolio
   </h1>
 </div>
 `;

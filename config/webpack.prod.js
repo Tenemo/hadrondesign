@@ -1,52 +1,75 @@
 import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';
+import WebpackMd5Hash from 'webpack-md5-hash';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+
+const GLOBALS = {
+    'process.env.NODE_ENV': JSON.stringify('production'),
+    __DEV__: false
+};
 
 export default {
     resolve: {
         extensions: ['*', '.js', '.jsx', '.json']
     },
-    devtool: 'cheap-module-eval-source-map',
-    entry: [
-        'eventsource-polyfill', // necessary for hot reloading with IE
-        'react-hot-loader/patch',
-        'webpack-hot-middleware/client',
-        // 'webpack-hot-middleware/client?reload=true',
-        path.resolve(__dirname, '../src/index.jsx')
-    ],
+    devtool: 'source-map',
+    entry: path.resolve(__dirname, '../src/index.jsx'),
     target: 'web',
-    mode: 'development',
+    mode: 'production',
     output: {
-        path: __dirname + '../dist', // Note: Physical files are only output by the production build task `npm run build`.
+        path: path.resolve(__dirname, '../dist/'),
         publicPath: '/',
         filename: 'bundle.js'
     },
     devServer: {
-        contentBase: path.resolve(__dirname, 'src'),
+        contentBase: path.resolve(__dirname, '../dist/'),
     },
     plugins: [
+        new WebpackMd5Hash(),
+        new webpack.DefinePlugin(GLOBALS),
         new webpack.ProvidePlugin({
             React: 'react',
             $: 'jquery',
             jQuery: 'jquery',
             Popper: 'popper.js/dist/umd/popper' // https://github.com/FezVrasta/bootstrap-material-design/issues/1296
         }),
-        new HardSourceWebpackPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin(),
-        // new MiniCssExtractPlugin({
-        //     filename: '[name].css',
-        //     chunkFilename: '[id].css'
-        // }),
+        new MiniCssExtractPlugin({
+            filename: '[name].[hash].css',
+            chunkFilename: '[id].[hash].css'
+        }),
         new HtmlWebpackPlugin({
             template: 'src/index.pug',
             title: 'Piotr Piech',
             filename: 'index.html',
             inject: 'true',
-            favicon: './src/favicon.ico'
+            favicon: './src/favicon.ico',
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeRedundantAttributes: true,
+                useShortDoctype: true,
+                removeEmptyAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                keepClosingSlash: true,
+                minifyJS: true,
+                minifyCSS: true,
+                minifyURLs: true
+            },
         }),
     ],
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                styles: {
+                    name: 'styles',
+                    test: /\.css$/,
+                    chunks: 'all',
+                    enforce: true
+                }
+            }
+        }
+    },
     module: {
         rules: [
             {
@@ -61,12 +84,11 @@ export default {
             {
                 test: /(\.css|\.scss|\.sass)$/,
                 use: [
-                    //MiniCssExtractPlugin.loader,
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
-                            minimize: false,
+                            minimize: true,
                             sourceMap: true
                         }
                     }, {

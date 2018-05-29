@@ -5,9 +5,9 @@ describe('AboutPage', () => {
     // it('should have an h1 About header', () => {
     // });
     it('matches snapshot', () => {
-        const wrapper = shallow(pug`
-            AboutPage
-        `);
+        const wrapper = shallow(
+            <AboutPage />
+        );
         expect(wrapper).toMatchSnapshot();
     });
 });

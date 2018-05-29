@@ -6,12 +6,10 @@ import createHistory from 'history/createBrowserHistory';
 import thunk from 'redux-thunk';
 
 export const history = createHistory();
-export default function configureStore(initialState) {
+
+function configureStoreDev(initialState) {
     const reactRouterMiddleware = routerMiddleware(history);
     const middleware = [
-        // Add other middleware on this line...
-
-        // Redux middleware that spits an error on you when you try to mutate your state either inside a dispatch or between dispatches.
         reduxImmutableStateInvariant(),
         thunk,
         reactRouterMiddleware
@@ -32,3 +30,20 @@ export default function configureStore(initialState) {
     }
     return store;
 }
+
+function configureStoreProd(initialState) {
+    const reactRouterMiddleware = routerMiddleware(history);
+    const middlewares = [
+        thunk,
+        reactRouterMiddleware,
+    ];
+
+    return createStore(rootReducer, initialState, compose(
+        applyMiddleware(...middlewares)
+    )
+    );
+}
+
+const configureStore = process.env.NODE_ENV === 'production' ? configureStoreProd : configureStoreDev;
+
+export default configureStore;

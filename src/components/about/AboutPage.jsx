@@ -1,11 +1,12 @@
 import React from 'react';
+
 class AboutPage extends React.Component {
     render() {
-        return pug`
-            div
-                h1 About
-                p This application uses React, Redux, React Router and a variety of other helpful libraries.
-        `;
+        return (
+        <div className="jumbotron">
+            <h1>About</h1>
+        </div>
+        );
     }
 }
 
