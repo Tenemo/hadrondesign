@@ -3,6 +3,7 @@ import rootReducer from '../reducers';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import { routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
+import thunk from 'redux-thunk';
 
 export const history = createHistory();
 export default function configureStore(initialState) {
@@ -12,6 +13,7 @@ export default function configureStore(initialState) {
 
         // Redux middleware that spits an error on you when you try to mutate your state either inside a dispatch or between dispatches.
         reduxImmutableStateInvariant(),
+        thunk,
         reactRouterMiddleware
     ];
     const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

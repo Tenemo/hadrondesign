@@ -1,53 +1,48 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as gameActions from '../../actions/gameActions';
 
 export class GamePage extends React.Component {
     constructor(props, context) {
         super(props, context);
-
-        this.state = {
-            game: { title: '' }
-        };
-
-        this.onTitleChange = this.onTitleChange.bind(this);
-        this.onClickSave = this.onClickSave.bind(this);
     }
 
-    onTitleChange(event) {
-        const game = this.state.game;
-        game.title = event.target.value;
-        this.setState({ game: game });
-    }
-
-    onClickSave() {
-        this.props.dispatch(gameActions.newGame(this.state.course));
-        //console.log(`Saving ${this.state.game.title}`);
+    gameRow(game, index) {
+        return pug`
+        div(key=index)
+            = game.title
+        `;
     }
 
     render() {
         return pug`
             div
                 h1 Flip 'Em
-                h2 New Game
-                input(
-                    type='text'
-                    onChange=this.onTitleChange
-                    value=this.state.game.title
-                )
-                input(
-                    type='submit'
-                    value='Save'
-                    onClick=this.onClickSave
-                )
+                = this.props.games.map(this.gameRow)
         `;
     }
 }
+
+GamePage.propTypes = {
+    games: PropTypes.array.isRequired,
+    actions: PropTypes.object.isRequired
+};
+
 function mapStateToProps(state) {
     return {
         games: state.games
     };
 }
+
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(gameActions, dispatch)
+    };
+}
+
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(GamePage);
