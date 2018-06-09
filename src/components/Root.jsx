@@ -7,11 +7,13 @@ import App from './App';
 export default class Root extends Component {
     render() {
         const { store, history } = this.props;
-        return (pug`
-            Provider(store=store)
-                ConnectedRouter(history=history)
-                    App
-        `);
+        return (
+            <Provider store={store}>
+                <ConnectedRouter history={history}>
+                    <App></App>
+                </ConnectedRouter>
+            </Provider>
+        );
     }
 }
 

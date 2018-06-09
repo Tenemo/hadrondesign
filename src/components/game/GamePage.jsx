@@ -10,18 +10,19 @@ export class GamePage extends React.Component {
     }
 
     gameRow(game, index) {
-        return pug`
-        div(key=index)
-            = game.title
-        `;
+        return (
+            <div key={index}>
+                {game.title}
+            </div>);
     }
 
     render() {
-        return pug`
-            div
-                h1 Flip 'Em
-                = this.props.games.map(this.gameRow)
-        `;
+        return (
+            <div>
+                <h1>Flip&apos;em</h1>
+                {this.props.games.map(this.gameRow)}
+            </div>
+            );
     }
 }
 

@@ -41,7 +41,7 @@ export default {
         // }),
         new HtmlWebpackPlugin({
             template: 'src/index.pug',
-            title: 'Piotr Piech',
+            title: 'HD',
             filename: 'index.html',
             inject: 'true',
             favicon: './src/favicon.ico'
