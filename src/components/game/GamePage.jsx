@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as gameActions from '../../actions/gameActions';
+import Board from './Board';
+import './game.scss';
 
 export class GamePage extends React.Component {
     constructor(props, context) {
@@ -21,6 +23,7 @@ export class GamePage extends React.Component {
             <div>
                 <h1>Flip&apos;em</h1>
                 {this.props.games.map(this.gameRow)}
+                <Board />
             </div>
             );
     }
