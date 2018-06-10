@@ -3,8 +3,10 @@ import { render } from 'react-dom';
 import configureStore, { history } from './store/configureStore';
 import { AppContainer } from 'react-hot-loader';
 import Root from './components/Root';
-import './../node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js';
-import './../node_modules/bootstrap-material-design/scss/_core.scss';
+import 'bootstrap/dist/js/bootstrap.min.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import './../node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js';
+// import './../node_modules/bootstrap-material-design/scss/_core.scss';
 import './styles/global.scss';
 import {newGame} from './actions/gameActions';
 

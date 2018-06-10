@@ -1,7 +1,7 @@
 import * as types from './actionTypes';
 import fetch from 'node-fetch';
 
-const api = 'http://192.168.1.103:4000';
+const api = 'http://192.168.0.103:4000';
 
 export function newGame() {
     return dispatch => {
@@ -11,9 +11,9 @@ export function newGame() {
                 'Content-type': 'application/json; charset=UTF-8'
             },
             body: JSON.stringify({
-                'size': 8
-                //'easyMode': true
-                // 'seed': 'fa0661bb07304ef2d008148feee251b9'
+                'size': 8,
+                'easyMode': true,
+                'seed': 'fa0661bb07304ef2d008148feee251b9'
             })
         })
             .then(res => res.json())

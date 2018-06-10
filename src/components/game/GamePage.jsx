@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as gameActions from '../../actions/gameActions';
 import './game.scss';
 import Board from './GameBoard';
+import Panel from './GamePanel';
 
 export class GamePage extends React.Component {
     constructor(props, context) {
@@ -17,17 +18,18 @@ export class GamePage extends React.Component {
     }
     render() {
         return (
-            <div className="col-8">
-            gameId: {this.props.game.gameId}
-            <br />
-            left: {this.props.game.leftCount}
-            <br />
-            move count: {this.props.game.moveCount}
-            <br />
-            current moves: {JSON.stringify(this.props.game.moves)}
-            <br />
-            <Board game={this.props.game} onMoveClick={this.onMoveClick} />
-            {/* {console.log(this.onMoveClick)} */}
+            <div className="row">
+                <div className="col-8">
+                    <Board game={this.props.game} onMoveClick={this.onMoveClick} />
+                </div>
+                <div className="col-4">
+                    <Panel
+                        gameId={this.props.game.gameId}
+                        leftCount={this.props.game.leftCount}
+                        moveCount={this.props.game.moveCount}
+                        moves={this.props.game.moves}
+                    />
+                </div>
             </div>
         );
     }

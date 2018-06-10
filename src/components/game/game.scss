@@ -6,6 +6,15 @@ $tileSize: 40px;
     }
 }
 
+.panel {
+    word-wrap: break-word;
+    //background-color: #666;
+    //color: white;
+    // select {
+    //     background-color: white;
+    // }
+}
+
 .tile {
     width: $tileSize;
     height: $tileSize;
