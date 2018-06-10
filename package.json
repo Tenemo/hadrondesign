@@ -52,6 +52,7 @@
         "autoprefixer": "^8.6.2",
         "babel-cli": "^6.26.0",
         "babel-core": "^6.26.3",
+        "babel-eslint": "^8.2.3",
         "babel-loader": "^7.1.4",
         "babel-plugin-transform-react-jsx-source": "^6.22.0",
         "babel-plugin-transform-react-pug": "^6.0.0",

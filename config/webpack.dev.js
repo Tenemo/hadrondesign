@@ -7,7 +7,7 @@ export default {
     resolve: {
         extensions: ['*', '.js', '.jsx', '.json']
     },
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'cheap-module-source-map',
     entry: [
         'eventsource-polyfill', // necessary for hot reloading with IE
         'react-hot-loader/patch',

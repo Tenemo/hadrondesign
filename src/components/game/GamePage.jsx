@@ -4,52 +4,30 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as gameActions from '../../actions/gameActions';
 import './game.scss';
-import Tile from './Tile';
+import Board from './GameBoard';
 
 export class GamePage extends React.Component {
     constructor(props, context) {
         super(props, context);
+        this.onMoveClick = this.onMoveClick.bind(this);
     }
-
-    gameRow(game, index) {
-        return (
-            <div key={index}>
-                {game.board}
-            </div>);
+    onMoveClick = event => {
+        //this.props.actions.makeMove(e.target.name);
+        this.props.actions.makeMove(event.target.getAttribute('coords'));
     }
-
     render() {
         return (
-            <div className="board">
-                {/* {game.board} */}
-                {/* {console.log(JSON.stringify(this.props.game.board[2]))} */}
-                {/* {this.props.game.board.map((row, i) => <Tile game={this.props.game.board[i]} key={i} />)} */}
-
-                {/* {this.props.game.board.map((row, i) => {
-                    return (<Tile number={"a"} key={i}></Tile>);
-                })} */}
-                <div className="gameContainer">
-                    {this.props.game.board.map((row, i) => {
-                        return (
-                            <div className="boardRow" key={i}>
-                                {row.map((column, j) => {
-                                    return (<Tile coords = {[i, j]} type={column} key={j} />);
-                                })}
-                            </div>
-                        );
-                    })}
-                </div>
-
-                {/* {this.props.game.board.map((row, i) => {
-                    return (
-                        <div className="boardRow">asdasd</div>
-                        {this.props.game.board.map((row, j) => {
-                        return (
-                            <Tile number={this.props.game.board[i][j]} key={j}></Tile>
-                        );
-                        })}
-                    );
-                })} */}
+            <div className="col-8">
+            gameId: {this.props.game.gameId}
+            <br />
+            left: {this.props.game.leftCount}
+            <br />
+            move count: {this.props.game.moveCount}
+            <br />
+            current moves: {JSON.stringify(this.props.game.moves)}
+            <br />
+            <Board game={this.props.game} onMoveClick={this.onMoveClick} />
+            {/* {console.log(this.onMoveClick)} */}
             </div>
         );
     }

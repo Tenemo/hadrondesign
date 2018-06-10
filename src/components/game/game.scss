@@ -1,7 +1,5 @@
 @import '../../styles/variables';
-
 $tileSize: 40px;
-
 .board {
     .boardRow {
         display: flex;
@@ -9,25 +7,16 @@ $tileSize: 40px;
 }
 
 .tile {
-    &.inactive {
-        visibility: hidden;
-    }
-    margin: 1px;
-    color: black;
-    perspective: 200px;
     width: $tileSize;
     height: $tileSize;
-    // :hover.tileInside {
-    //     transform: rotateY(180deg)
-    // }
-    .tileInside {
-        transition: 0.3s;
-        transform-style: preserve-3d;
-        position: relative;
-        
-    }
+    margin: 1px;
+    perspective: 200px;
+    user-select: none;
     .front,
     .back {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 5px;
         width: $tileSize;
         height: $tileSize;
@@ -36,9 +25,11 @@ $tileSize: 40px;
         top: 0;
         left: 0;
         border-radius: 8px;
-        &:hover {
-            background-color: white;
-        }
+    }
+    .tileInside {
+        transition: 0.3s;
+        transform-style: preserve-3d;
+        position: relative;
     }
     .front {
         z-index: 2;
@@ -49,5 +40,42 @@ $tileSize: 40px;
     .back {
         transform: rotateY(180deg);
         background-color: $secondary-color;
+    }
+    &.inactive {
+        visibility: hidden;
+    }
+    &.coords {
+        background-color: $primary-bg;
+        .front {
+            background-color: $primary-bg;
+        }
+    }
+    &.flipped {
+        .front,
+        .back {
+            background-color: #444;
+            color: #444;
+            &:hover {
+                background-color: #666;
+                color: white;
+                cursor: pointer;
+                font-weight: 300;
+            }
+        }
+        .tileInside {
+            transform: rotateY(180deg)
+        }
+    }
+    &.active {
+        .front,
+        .back {
+            color: $primary-color;
+            &:hover {
+                background-color: white;
+                color: $primary-bg;
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
     }
 }

@@ -17,6 +17,7 @@ browserSync({
         port: 3001
     },
     open: false,
+    cors: true,
     server: {
         baseDir: 'src',
 
