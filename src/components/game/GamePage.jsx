@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as gameActions from '../../actions/gameActions';
-import Board from './Board';
 import './game.scss';
+import Tile from './Tile';
 
 export class GamePage extends React.Component {
     constructor(props, context) {
@@ -14,29 +14,55 @@ export class GamePage extends React.Component {
     gameRow(game, index) {
         return (
             <div key={index}>
-                {game.title}
+                {game.board}
             </div>);
     }
 
     render() {
         return (
-            <div>
-                <h1>Flip&apos;em</h1>
-                {this.props.games.map(this.gameRow)}
-                <Board />
+            <div className="board">
+                {/* {game.board} */}
+                {/* {console.log(JSON.stringify(this.props.game.board[2]))} */}
+                {/* {this.props.game.board.map((row, i) => <Tile game={this.props.game.board[i]} key={i} />)} */}
+
+                {/* {this.props.game.board.map((row, i) => {
+                    return (<Tile number={"a"} key={i}></Tile>);
+                })} */}
+                <div className="gameContainer">
+                    {this.props.game.board.map((row, i) => {
+                        return (
+                            <div className="boardRow" key={i}>
+                                {row.map((column, j) => {
+                                    return (<Tile coords = {[i, j]} type={column} key={j} />);
+                                })}
+                            </div>
+                        );
+                    })}
+                </div>
+
+                {/* {this.props.game.board.map((row, i) => {
+                    return (
+                        <div className="boardRow">asdasd</div>
+                        {this.props.game.board.map((row, j) => {
+                        return (
+                            <Tile number={this.props.game.board[i][j]} key={j}></Tile>
+                        );
+                        })}
+                    );
+                })} */}
             </div>
-            );
+        );
     }
 }
 
 GamePage.propTypes = {
-    games: PropTypes.array.isRequired,
+    game: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
     return {
-        games: state.games
+        game: state.game
     };
 }
 

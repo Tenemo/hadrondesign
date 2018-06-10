@@ -13,8 +13,8 @@ exports[`Header matches snapshot 1`] = `
   </Link>
   <NavLink
     activeClassName="active"
-    ariaCurrent="true"
-    class="nav-item"
+    aria-current="page"
+    className="nav-item"
     exact={true}
     to="/"
   >
@@ -26,8 +26,8 @@ exports[`Header matches snapshot 1`] = `
   </NavLink>
   <NavLink
     activeClassName="active"
-    ariaCurrent="true"
-    class="nav-item"
+    aria-current="page"
+    className="nav-item"
     to="/portfolio"
   >
     <div
@@ -38,8 +38,8 @@ exports[`Header matches snapshot 1`] = `
   </NavLink>
   <NavLink
     activeClassName="active"
-    ariaCurrent="true"
-    class="nav-item"
+    aria-current="page"
+    className="nav-item"
     to="/game"
   >
     <div
@@ -50,8 +50,8 @@ exports[`Header matches snapshot 1`] = `
   </NavLink>
   <NavLink
     activeClassName="active"
-    ariaCurrent="true"
-    class="nav-item"
+    aria-current="page"
+    className="nav-item"
     to="/contact"
   >
     <div

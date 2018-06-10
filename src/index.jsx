@@ -6,10 +6,12 @@ import Root from './components/Root';
 import './../node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js';
 import './../node_modules/bootstrap-material-design/scss/_core.scss';
 import './styles/global.scss';
+import {newGame} from './actions/gameActions';
 
 console.log('NODE_ENV = ' + process.env.NODE_ENV);
 
 const store = configureStore();
+store.dispatch(newGame());
 
 render(
     (

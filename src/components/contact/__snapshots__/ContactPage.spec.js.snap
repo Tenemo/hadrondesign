@@ -5,7 +5,7 @@ exports[`ContactPage matches snapshot 1`] = `
   className="jumbotron"
 >
   <h1>
-    Contact
+    piotr@hadron.design
   </h1>
 </div>
 `;
