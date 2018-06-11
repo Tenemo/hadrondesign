@@ -1,9 +1,10 @@
 export default {
     game: {
         board: [[]],
-        size: 8,
+        size: 0,
         leftCount: undefined,
         playerName: 'anonymous',
+        gameID: null,
         moveCount: 0,
         moves: []
     }

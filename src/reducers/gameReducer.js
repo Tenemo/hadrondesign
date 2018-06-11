@@ -8,9 +8,12 @@ export default function gameReducer(state = initialState.game, action) {
     switch (action.type) {
         case types.NEW_GAME_SUCCESS:
             newState = objectAssign({}, state);
-            newState.board = action.game.board;
-            newState.gameId = action.game.gameId;
+            newState.board = action.newGame.board;
+            newState.gameId = action.newGame.gameId;
+            newState.size = action.newGame.size;
             newState.leftCount = 0;
+            newState.moves = [];
+            newState.moveCount = 0;
             //console.log(newState.board[0]);
             for (let i = 0; i < newState.board.length; ++i) {
                 for (let j = 0; j < newState.board[i].length; ++j) {
@@ -21,10 +24,14 @@ export default function gameReducer(state = initialState.game, action) {
             return newState;
         case types.MAKE_MOVE:
             newState = objectAssign({}, state);
-            // if .push is used EVEN on newState, we get "A state mutation was detected inside a dispatch", googled for a couple of hours, still have no clue why is that, might be a legitimate bug
+            // if .push is used EVEN on newState, I get "A state mutation was detected inside a dispatch",
+            // googled for a couple of hours, still have no clue why is that
             newState.moves = newState.moves.concat(action.move);
             newState.moveCount++;
             newState = updateBoard(newState, action.move);
+            return newState;
+        case types.WIN_GAME_SUCCESS:
+            newState = objectAssign({}, state);
             return newState;
         default:
             return state;

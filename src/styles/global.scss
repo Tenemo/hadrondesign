@@ -3,7 +3,7 @@
 
 body {
     background-color: $primary-bg;
-    font: 14px $primary-font;
+    font-family: $primary-font;
     color: $primary-color;
 }
 
@@ -14,3 +14,10 @@ body {
 a.active {
     color: $secondary-color;
 }
+
+.simpleBox {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 2px;
+}
+

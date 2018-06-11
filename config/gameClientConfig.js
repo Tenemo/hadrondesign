@@ -1,6 +1,7 @@
 const gameClientConfig = {
-    minSize: 6,
+    minSize: 4,
     maxSize: 16,
-    alphabet: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    alphabet: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    cyrillic: 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
 };
 export default gameClientConfig;
