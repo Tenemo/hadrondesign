@@ -1,10 +1,11 @@
 @import '../../styles/variables';
-$tileSize: 50px;
+$tileSize: 60px;
 .board {
+    text-align: center;
     .boardRow {
         min-height: 20px;
         display: flex;
-        //height: $tileSize;
+        text-align: center;
     }
 }
 
@@ -19,6 +20,7 @@ $tileSize: 50px;
 
 .tile {
     height: 100%;
+    max-width: $tileSize;
     width: 100%;
     margin: 1px;
     perspective: 200px;
@@ -39,7 +41,6 @@ $tileSize: 50px;
     .tileInside {
         padding-top: 100%; /* 1:1 Aspect Ratio */
         width: 100%;
-        display: flex;
         transition: 0.3s;
         transform-style: preserve-3d;
         position: relative;
@@ -84,7 +85,6 @@ $tileSize: 50px;
         .back {
             color: $primary-color;
             &:hover {
-                background-color: white;
                 color: $primary-bg;
                 font-weight: 700;
                 cursor: pointer;

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Tile from './GameTile';
 
-const Board = ({game, onMoveClick}) => {
+const Board = ({ game, onMoveClick }) => {
     return (
         <div className="board">
             {game.board.map((row, i) => {
