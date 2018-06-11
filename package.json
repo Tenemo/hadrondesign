@@ -31,7 +31,6 @@
     "dependencies": {
         "babel-polyfill": "^6.26.0",
         "bootstrap": "^4.1.1",
-        "bootstrap-material-design": "^4.1.1",
         "classnames": "^2.2.6",
         "history": "^4.7.2",
         "jquery": "^3.3.1",
@@ -79,8 +78,8 @@
         "hard-source-webpack-plugin": "^0.7.5",
         "html-webpack-plugin": "^3.2.0",
         "identity-obj-proxy": "^3.0.0",
-        "jest": "^22.4.3",
-        "jest-cli": "^22.4.3",
+        "jest": "^23.1.0",
+        "jest-cli": "^23.1.0",
         "mini-css-extract-plugin": "^0.4.0",
         "node-sass": "^4.9.0",
         "postcss-loader": "^2.1.5",

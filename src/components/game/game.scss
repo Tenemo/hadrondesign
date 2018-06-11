@@ -16,6 +16,14 @@ $tileSize: 60px;
     // select {
     //     background-color: white;
     // }
+    .stats {
+        padding: 5px;
+    }
+    .newGameForm {
+        padding: 10px;
+        border: 2px white solid;
+        border-radius: 5px;
+    }
 }
 
 .tile {
@@ -36,7 +44,7 @@ $tileSize: 60px;
         position: absolute;
         top: 0;
         left: 0;
-        border-radius: 8px;
+        border-radius: 15%;
     }
     .tileInside {
         padding-top: 100%; /* 1:1 Aspect Ratio */
@@ -67,10 +75,10 @@ $tileSize: 60px;
     &.flipped {
         .front,
         .back {
-            background-color: #444;
-            color: #444;
+            background-color: $game-dark;
+            color: $game-dark;
             &:hover {
-                background-color: #666;
+                background-color: lighten($game-dark, 10%);
                 color: white;
                 cursor: pointer;
                 font-weight: 300;
@@ -85,6 +93,7 @@ $tileSize: 60px;
         .back {
             color: $primary-color;
             &:hover {
+                background-color: lighten($primary-color, 20%);
                 color: $primary-bg;
                 font-weight: 700;
                 cursor: pointer;

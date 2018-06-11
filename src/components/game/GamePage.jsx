@@ -18,9 +18,11 @@ export class GamePage extends React.Component {
     }
     render() {
         return (
-            <div className="row justify-content-center">
-                <div className="col-8">
-                    <Board game={this.props.game} onMoveClick={this.onMoveClick} />
+            <div className="row">
+                <div className="col-sm-7 offset-md-1">
+                    <div className="">
+                        <Board game={this.props.game} onMoveClick={this.onMoveClick} />
+                    </div>
                 </div>
                 <div className="col-sm-4">
                     <Panel
