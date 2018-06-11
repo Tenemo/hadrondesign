@@ -1,11 +1,15 @@
 @import '../../styles/variables';
 $tileSize: 60px;
+.gamePage {
+    margin-top: 20px;
+}
+
 .board {
-    text-align: center;
     .boardRow {
         min-height: 20px;
         display: flex;
         text-align: center;
+        justify-content: center;
     }
 }
 

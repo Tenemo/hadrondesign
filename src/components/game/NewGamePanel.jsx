@@ -2,17 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import gameClientConfig from '../../../config/gameClientConfig';
 
-const NewGamePanel = ({ game, onNewGameClick, onChange }) => {
+const NewGamePanel = ({ game, onNewGameClick, onChange, onRestartClick }) => {
     let selectOptions = [];
     for (let i = gameClientConfig.minSize; i < gameClientConfig.maxSize + 1; i++) {
         selectOptions.push(
-            <option key={i} value={i}>{i}{i == 8 && ' - suggested'}</option>
+            <option key={i} value={i}>{i}{i === 6 && ' - suggested'}</option>
         );
     }
     return (
         <div className="panel">
             <form className="simpleBox">
                 <h4>New game</h4>
+                <div className="form-group">
+                    <label htmlFor="playerName">Player name, optional, if you want to appear in the scoreboard: </label>
+                    <input onChange={onChange} value={game.playerName} type="text" className="form-control" name="playerName" placeholder="myPlayerName" />
+                </div>
                 <div className="form-group">
                     <label htmlFor="newSize">Board size: </label>
                     <select onChange={onChange} value={game.newSize} className="form-control" name="newSize">
@@ -31,6 +35,7 @@ const NewGamePanel = ({ game, onNewGameClick, onChange }) => {
                 </div>
                 <div className="form-group">
                     <input className="btn btn-primary" type="submit" value="New Game" onClick={onNewGameClick} />
+                    <input className="btn btn-primary" type="submit" value="Restart" onClick={onRestartClick} />
                 </div>
             </form>
         </div>
@@ -40,6 +45,7 @@ const NewGamePanel = ({ game, onNewGameClick, onChange }) => {
 NewGamePanel.propTypes = {
     game: PropTypes.object,
     onNewGameClick: PropTypes.func,
+    onRestartClick: PropTypes.func,
     onChange: PropTypes.func
 };
 

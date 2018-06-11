@@ -100,3 +100,9 @@ export function getHighScoresSuccess(highScores) {
     };
 }
 
+export function restartBoard() {
+    return {
+        type: types.RESTART_BOARD
+    };
+}
+

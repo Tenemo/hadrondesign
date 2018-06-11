@@ -15,22 +15,19 @@ export class GamePage extends React.Component {
         this.onMoveClick = this.onMoveClick.bind(this);
         this.onNewGameClick = this.onNewGameClick.bind(this);
         this.updateGameState = this.updateGameState.bind(this);
+        this.restartBoard = this.restartBoard.bind(this);
     }
     onMoveClick = event => {
         //this.props.actions.makeMove(e.target.name);
         Promise.resolve(this.props.actions.makeMove(event.target.getAttribute('coords')))
             .then(() => {
                 if (this.props.game.leftCount === 0) {
-                    Promise.resolve(this.props.actions.winGame(this.props.game)).
-                        then(() => {
-                            console.log('isDisabled: ' + this.props.game.isDisabled);
-                        });
+                    this.props.actions.winGame(this.props.game);
                 }
             });
     }
     onNewGameClick = event => {
         event.preventDefault();
-        console.log('isDisabled: ' + this.props.game.isDisabled);
         this.props.actions.getHighScores();
         this.props.actions.newGame(
             this.props.game.newSize,
@@ -45,25 +42,29 @@ export class GamePage extends React.Component {
         value = event.target.type == 'checkbox' ? event.target.checked : event.target.value;
         this.props.actions.updateOnChange(name, value);
     }
+    restartBoard = event => {
+        event.preventDefault();
+        this.props.actions.restartBoard();
+    }
 
     render() {
         return (
-            <React.Fragment>
-                isDisabled: {JSON.stringify(this.props.game.isDisabled)}
+            <div className="gamePage">
                 <div className="row">
-                    <div className="col-sm-7 offset-md-1">
+                    <div className="col-sm-7 col-md-8 align-self-center">
                         <Board game={this.props.game} onMoveClick={this.onMoveClick} />
                     </div>
-                    <div className="col-sm-5 col-md-4">
+                    <div className="col-sm-5 col-md-4 col-lg-3">
                         <NewGamePanel
                             game={this.props.game}
                             onNewGameClick={this.onNewGameClick}
                             onChange={this.updateGameState}
+                            onRestartClick={this.props.actions.restartBoard}
                         />
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-sm-7 col-md-8">
+                <div className="row justify-content-between">
+                    <div className="col-sm-7 col-md-6 col-lg-5">
                         <HighScores highScores={this.props.game.highScores} />
                     </div>
                     <div className="col-sm-5 col-md-4">
@@ -75,7 +76,7 @@ export class GamePage extends React.Component {
                         />
                     </div>
                 </div>
-            </React.Fragment>
+            </div>
         );
     }
 }
