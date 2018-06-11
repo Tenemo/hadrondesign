@@ -11,7 +11,7 @@ const Board = ({ game, onMoveClick }) => {
                         {/* type 3 are left coord tiles */}
                         <Tile size={game.size} coords={[i]} type={3} key={i} />
                         {row.map((column, j) => {
-                            return (<Tile onMoveClick={onMoveClick} size={game.size} coords={[i, j]} type={column} key={j} />);
+                            return (<Tile onMoveClick={onMoveClick} size={game.size} coords={[i, j]} type={column} isDisabled={game.isDisabled} key={j} />);
                         })}
                     </div>
                 );

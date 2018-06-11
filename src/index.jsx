@@ -7,12 +7,12 @@ import Root from './components/Root';
 //import 'bootstrap/scss/bootstrap.scss';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import './styles/global.scss';
-import {newGame} from './actions/gameActions';
+import {getHighScores} from './actions/gameActions';
 
 console.log('NODE_ENV = ' + process.env.NODE_ENV);
 
 const store = configureStore();
-store.dispatch(newGame());
+store.dispatch(getHighScores());
 
 render(
     (

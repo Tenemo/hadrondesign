@@ -8,6 +8,7 @@ export default function gameReducer(state = initialState.game, action) {
     switch (action.type) {
         case types.NEW_GAME_SUCCESS:
             newState = objectAssign({}, state);
+            newState.isDisabled = false;
             newState.board = action.newGame.board;
             newState.gameId = action.newGame.gameId;
             newState.size = action.newGame.size;
@@ -32,6 +33,15 @@ export default function gameReducer(state = initialState.game, action) {
             return newState;
         case types.WIN_GAME_SUCCESS:
             newState = objectAssign({}, state);
+            newState.isDisabled = true;
+            return newState;
+        case types.UPDATE_ON_CHANGE:
+            newState = objectAssign({}, state);
+            newState[action.name] = action.value;
+            return newState;
+        case types.GET_HIGH_SCORES_SUCCESS:
+            newState = objectAssign({}, state);
+            newState.highScores = action.highScores;
             return newState;
         default:
             return state;

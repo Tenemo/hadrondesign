@@ -1,11 +1,16 @@
 export default {
     game: {
-        board: [[]],
-        size: 0,
+        board: [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],
+        size: 4,
+        newSize: 4,
         leftCount: undefined,
-        playerName: 'anonymous',
+        playerName: 'Tenemo',
         gameID: null,
         moveCount: 0,
-        moves: []
+        moves: [],
+        seed: '',
+        easyMode: false,
+        highScores: [],
+        isDisabled: true
     }
 };

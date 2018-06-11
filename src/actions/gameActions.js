@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 
 const api = 'http://192.168.0.103:4000';
 
-export function newGame(size = 4, easyMode, seed, previousId = null) {
+export function newGame(newSize = 4, easyMode, seed, previousId) {
     return dispatch => {
         fetch(api + '/api/game/new', {
             method: 'post',
@@ -11,10 +11,9 @@ export function newGame(size = 4, easyMode, seed, previousId = null) {
                 'Content-type': 'application/json; charset=UTF-8'
             },
             body: JSON.stringify({
-                'size': size,
+                'size': newSize,
                 'easyMode': easyMode,
                 'seed': seed,
-                //'seed': 'fa0661bb07304ef2d008148feee251b9',
                 'previousId': previousId,
             })
         })
@@ -70,3 +69,34 @@ export function winGameSuccess(game) {
         game
     };
 }
+
+export function updateOnChange(name, value) {
+    return {
+        type: types.UPDATE_ON_CHANGE,
+        name,
+        value
+    };
+}
+
+export function getHighScores() {
+    return dispatch => {
+        fetch(api + '/api/game/highScores', {
+            method: 'get'
+        })
+            .then(res => res.json())
+            .then(highScores => {
+                dispatch(getHighScoresSuccess(highScores));
+            })
+            .catch(err => {
+                throw (err);
+            });
+    };
+}
+
+export function getHighScoresSuccess(highScores) {
+    return {
+        type: types.GET_HIGH_SCORES_SUCCESS,
+        highScores
+    };
+}
+

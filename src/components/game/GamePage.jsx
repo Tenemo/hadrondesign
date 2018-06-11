@@ -21,32 +21,42 @@ export class GamePage extends React.Component {
         Promise.resolve(this.props.actions.makeMove(event.target.getAttribute('coords')))
             .then(() => {
                 if (this.props.game.leftCount === 0) {
-                    this.props.actions.winGame(this.props.game);
+                    Promise.resolve(this.props.actions.winGame(this.props.game)).
+                        then(() => {
+                            console.log('isDisabled: ' + this.props.game.isDisabled);
+                        });
                 }
             });
     }
     onNewGameClick = event => {
         event.preventDefault();
+        console.log('isDisabled: ' + this.props.game.isDisabled);
+        this.props.actions.getHighScores();
         this.props.actions.newGame(
-            4,
-            false,
-            null,
+            this.props.game.newSize,
+            this.props.game.easyMode,
+            this.props.game.seed,
             this.props.game.gameId
         );
     }
     updateGameState = event => {
-
+        const name = event.target.name;
+        let value;
+        value = event.target.type == 'checkbox' ? event.target.checked : event.target.value;
+        this.props.actions.updateOnChange(name, value);
     }
 
     render() {
         return (
             <React.Fragment>
+                isDisabled: {JSON.stringify(this.props.game.isDisabled)}
                 <div className="row">
                     <div className="col-sm-7 offset-md-1">
                         <Board game={this.props.game} onMoveClick={this.onMoveClick} />
                     </div>
                     <div className="col-sm-5 col-md-4">
                         <NewGamePanel
+                            game={this.props.game}
                             onNewGameClick={this.onNewGameClick}
                             onChange={this.updateGameState}
                         />
@@ -54,7 +64,7 @@ export class GamePage extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col-sm-7 col-md-8">
-                        <HighScores />
+                        <HighScores highScores={this.props.game.highScores} />
                     </div>
                     <div className="col-sm-5 col-md-4">
                         <CurrentPanel

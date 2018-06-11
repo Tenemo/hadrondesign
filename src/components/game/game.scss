@@ -11,18 +11,14 @@ $tileSize: 60px;
 
 .panel {
     word-wrap: break-word;
-    //background-color: #666;
-    //color: white;
-    // select {
-    //     background-color: white;
-    // }
-    // .stats {
-    // }
-    // .newGameForm {
-    // }
     .moves {
         height: 100px;
         overflow-y: scroll;
+    }
+}
+.highScores {
+    table {
+        width: 100%;
     }
 }
 
@@ -65,6 +61,9 @@ $tileSize: 60px;
     }
     &.inactive {
         visibility: hidden;
+    }
+    &.disabled {
+        pointer-events: none;
     }
     &.coords {
         background-color: $primary-bg;

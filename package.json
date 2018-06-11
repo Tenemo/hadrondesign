@@ -4,7 +4,7 @@
     "description": "",
     "scripts": {
         "start-message": "babel-node config/startMessage.js",
-        "prestart": "npm run start-message",
+        "prestart": "rimraf node_modules/.cache && npm run start-message",
         "start": "concurrently -k -r -s first \"npm run test:watch\" \"npm run open:src\"",
         "open:src": "babel-node config/srcServer.js",
         "open:dist": "babel-node config/distServer.js",
