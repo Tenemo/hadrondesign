@@ -1,8 +1,10 @@
 @import '../../styles/variables';
-$tileSize: 40px;
+$tileSize: 50px;
 .board {
     .boardRow {
+        min-height: 20px;
         display: flex;
+        //height: $tileSize;
     }
 }
 
@@ -16,19 +18,18 @@ $tileSize: 40px;
 }
 
 .tile {
-    width: $tileSize;
-    height: $tileSize;
+    height: 100%;
+    width: 100%;
     margin: 1px;
     perspective: 200px;
     user-select: none;
     .front,
     .back {
         display: flex;
+        height: 100%;
+        width: 100%;
         align-items: center;
         justify-content: center;
-        padding: 5px;
-        width: $tileSize;
-        height: $tileSize;
         backface-visibility: hidden;
         position: absolute;
         top: 0;
@@ -36,6 +37,9 @@ $tileSize: 40px;
         border-radius: 8px;
     }
     .tileInside {
+        padding-top: 100%; /* 1:1 Aspect Ratio */
+        width: 100%;
+        display: flex;
         transition: 0.3s;
         transform-style: preserve-3d;
         position: relative;

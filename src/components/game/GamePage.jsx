@@ -19,10 +19,10 @@ export class GamePage extends React.Component {
     render() {
         return (
             <div className="row">
-                <div className="col-8">
+                <div className="col-sm-8">
                     <Board game={this.props.game} onMoveClick={this.onMoveClick} />
                 </div>
-                <div className="col-4">
+                <div className="col-sm-4">
                     <Panel
                         gameId={this.props.game.gameId}
                         leftCount={this.props.game.leftCount}

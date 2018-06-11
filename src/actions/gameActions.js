@@ -12,7 +12,7 @@ export function newGame() {
             },
             body: JSON.stringify({
                 'size': 8,
-                'easyMode': true,
+                //'easyMode': true,
                 'seed': 'fa0661bb07304ef2d008148feee251b9'
             })
         })
