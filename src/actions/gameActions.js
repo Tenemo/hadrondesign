@@ -28,6 +28,7 @@ export function newGame(newSize = 4, easyMode, seed, previousId) {
             })
             .then(res => res.json())
             .then(newGame => {
+                $('.toast-container').remove();
                 toastr.success('New game loaded!', null, {
                     timeOut: 1500,
                     closeButton: false,
@@ -79,11 +80,14 @@ export function winGame(game) {
             })
             .then(res => res.json())
             .then(game => {
+                let scoreMsg;
+                if (game.score) {scoreMsg = 'Total score: ' + game.score + '</br>'};
                 toastr.success(
-                    'Total score: ' + game.score + '</br> Time: ' + Math.trunc(game.time / 1000) + ' s</br> Number of moves: ' + game.moveCount,
+                    scoreMsg + 'Time: ' + Math.trunc(game.time / 1000) + ' s</br> Number of moves: ' + game.moveCount,
                     '😎 Great job!',
                     {
-                        timeOut: 8000,
+                        timeOut: 3000,
+                        extendedTimeOut: 1500,
                         progressBar: true
                 });
                 dispatch(winGameSuccess(game));

@@ -7,6 +7,10 @@
 - navbar disappear after click on mobile
 - board min. size, i hate css + letters sticking out of tiles when the size is very small
 - better scores
+- clicking newgame should remove won game toast
+- undefined score when server doesnt send
+- add previous game info
+
 ### long-term
 - testing client/server
 - npm cache has it out for me, no amount of reinstalls fix EPERM error, I should find some other solution than rimrafing .cache on every start

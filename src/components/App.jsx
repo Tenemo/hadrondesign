@@ -12,9 +12,10 @@ toastr.options = {
     // hideEasing: 'linear',
     // closeEasing: 'linear',
     // preventDuplicates: true,
-    // closeDuration: 300,
+    closeDuration: 0,
     timeOut: 0,
-    extendedTimeOut: 0
+    extendedTimeOut: 0,
+    positionClass: 'toast-top-left'
 };
 
 class App extends React.Component {
