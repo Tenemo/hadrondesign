@@ -8,6 +8,7 @@ import Board from './GameBoard';
 import NewGamePanel from './NewGamePanel';
 import HighScores from './HighScores';
 import CurrentPanel from './CurrentPanel';
+import Tile from './Tile';
 
 export class GamePage extends React.Component {
     constructor(props, context) {
@@ -51,10 +52,19 @@ export class GamePage extends React.Component {
         return (
             <div className="gamePage">
                 <div className="row">
-                    <div className="col-sm-7 col-md-8 col-lg-9 align-self-center">
+                    <div className="col-sm-7 col-md-8 col-lg-9">
                         <Board game={this.props.game} onMoveClick={this.onMoveClick} />
                     </div>
                     <div className="col-sm-5 col-md-4 col-lg-3">
+                        {!this.props.game.gameId && <div className="exampleBox">
+                            <p>Game objective: make every tile gray in the least amount of moves and time.</p>
+                            <div className="example">
+                                <Tile type={1} coords={[3, 0]} size={8} isDisabled />
+                                &nbsp;&nbsp;{'=>'}&nbsp;&nbsp;
+                                <Tile type={0} coords={[3, 0]} size={8} isDisabled />
+                            </div>
+                            <p className="newGameTip">Start a new game to begin.</p>
+                        </div>}
                         <NewGamePanel
                             game={this.props.game}
                             onNewGameClick={this.onNewGameClick}

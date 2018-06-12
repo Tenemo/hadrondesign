@@ -1,14 +1,35 @@
 @import '../../styles/variables';
-$tileSize: 60px;
 // .gamePage {
 // }
 
 .board {
     .boardRow {
-        min-height: 20px;
         display: flex;
         text-align: center;
         justify-content: center;
+    }
+    &::before {
+        content: "";
+        float: left;
+        height: 0;
+    }
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.exampleBox {
+    p {
+        margin-bottom: 0px;
+        margin-top: 5px;
+        &.newGameTip {
+            font-weight: 700;
+        }}
+    .example {
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -34,10 +55,11 @@ $tileSize: 60px;
 }
 
 .tile {
-    height: 100%;
-    max-width: $tileSize;
+    font-size: 2vh;
+    max-width: 60px;
     width: 100%;
     margin: 1px;
+    margin: 0.15%;
     perspective: 200px;
     user-select: none;
     .front,
