@@ -12,15 +12,27 @@ export default {
         receivedBoard: [],
         size: defaultSize,
         newSize: defaultSize,
-        leftCount: undefined,
+        leftCount: null,
         playerName: '',
-        gameID: null,
+        gameId: '',
         moveCount: 0,
         moves: [],
         seed: '',
         easyMode: false,
         highScores: [],
-        isDisabled: true
+        isDisabled: true,
+        previous: {
+            size: null,
+            seed: '',
+            moveCount: null,
+            time: null,
+            score: null,
+            gameId: '',
+            easyMode: null,
+            isSeedCustom: null,
+            playerName: '',
+            moves: []
+        }
     },
     ajaxCallsInProgress: 0
 };

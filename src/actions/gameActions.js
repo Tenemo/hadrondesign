@@ -5,7 +5,7 @@ import toastr from 'toastr';
 
 const api = 'http://leczna.online:8080';
 
-export function newGame(newSize = 4, easyMode, seed, previousId) {
+export function newGame(newSize, easyMode, seed, previousId) {
     return dispatch => {
         dispatch(beginAjaxCall());
         return fetch(api + '/api/game/new', {
@@ -30,7 +30,7 @@ export function newGame(newSize = 4, easyMode, seed, previousId) {
             .then(newGame => {
                 $('.toast-container').remove();
                 toastr.success('New game loaded!', null, {
-                    timeOut: 1500,
+                    timeOut: 1000,
                     closeButton: false,
                     preventDuplicates: true
                 });
@@ -80,15 +80,14 @@ export function winGame(game) {
             })
             .then(res => res.json())
             .then(game => {
-                let scoreMsg;
-                if (game.score) {scoreMsg = 'Total score: ' + game.score + '</br>'};
+                let scoreMsg = '';
+                if (game.score) {scoreMsg = 'Total score: ' + game.score + '</br>';}
                 toastr.success(
-                    scoreMsg + 'Time: ' + Math.trunc(game.time / 1000) + ' s</br> Number of moves: ' + game.moveCount,
+                    scoreMsg,
                     '😎 Great job!',
                     {
-                        timeOut: 3000,
-                        extendedTimeOut: 1500,
-                        progressBar: true
+                        timeOut: 1000,
+                        extendedTimeOut: 0
                 });
                 dispatch(winGameSuccess(game));
             })

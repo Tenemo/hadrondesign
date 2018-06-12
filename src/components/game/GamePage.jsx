@@ -7,7 +7,7 @@ import './game.scss';
 import Board from './GameBoard';
 import NewGamePanel from './NewGamePanel';
 import HighScores from './HighScores';
-import CurrentPanel from './CurrentPanel';
+import InfoPanels from './InfoPanels';
 import Tile from './Tile';
 
 export class GamePage extends React.Component {
@@ -78,11 +78,8 @@ export class GamePage extends React.Component {
                 </div>
                 <div className="row justify-content-between">
                     <div className="col-sm-5 col-md-4 col-lg-3 order-sm-last">
-                        <CurrentPanel
-                            gameId={this.props.game.gameId}
-                            leftCount={this.props.game.leftCount}
-                            moveCount={this.props.game.moveCount}
-                            moves={this.props.game.moves}
+                        <InfoPanels
+                            game={this.props.game}
                         />
                     </div>
                     <div className="col-sm-7 col-md-8 col-lg-9">

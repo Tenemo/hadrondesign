@@ -34,6 +34,18 @@ export default function gameReducer(state = initialState.game, action) {
             return newState;
         case types.WIN_GAME_SUCCESS:
             newState = objectAssign({}, state);
+            newState.previous = {
+                size: newState.size,
+                seed: action.game.seed,
+                moveCount: action.game.moveCount,
+                time: action.game.time,
+                score: action.game.score,
+                gameId: newState.gameId,
+                easyMode: newState.easyMode,
+                isSeedCustom: action.game.isSeedCustom,
+                playerName: newState.playerName,
+            };
+            newState.previous.moves = JSON.parse(JSON.stringify(newState.moves));
             newState.isDisabled = true;
             return newState;
         case types.UPDATE_ON_CHANGE:
