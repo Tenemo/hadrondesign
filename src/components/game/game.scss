@@ -8,16 +8,6 @@
         text-align: center;
         justify-content: center;
     }
-    &::before {
-        content: "";
-        float: left;
-        height: 0;
-    }
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
 }
 
 .exampleBox {
@@ -56,7 +46,7 @@
 
 .tile {
     font-size: 2vh;
-    max-width: 60px;
+    max-width: 50px;
     width: 100%;
     margin: 1px;
     margin: 0.15%;

@@ -15,7 +15,7 @@ const Panel = ({ gameId, leftCount, moveCount, moves }) => {
                 <p>
                     Move count: {moveCount}
                 </p>
-                Moves made:
+                    Moves made:
                 <p className="moves">
                     {moves.map((move, i) => <React.Fragment key={i}>{!!i && ', '}{move}</React.Fragment>)}
                 </p>

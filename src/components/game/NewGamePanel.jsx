@@ -12,9 +12,24 @@ const NewGamePanel = ({ game, onNewGameClick, onChange, onRestartClick, loading 
     return (
         <div className="panel">
             <form className="simpleBox">
-                <h4>New game</h4>
                 <div className="form-group">
-                    <label htmlFor="playerName">Player name, optional, if you want to appear in the scoreboard: </label>
+                    <input
+                        className="btn btn-primary"
+                        type="submit"
+                        value={loading ? 'Loading...' : 'New Game'}
+                        onClick={onNewGameClick}
+                        disabled={loading}
+                    />
+                    <input
+                        className="btn btn-primary"
+                        type="submit"
+                        value="Restart"
+                        onClick={onRestartClick}
+                        disabled={game.isDisabled}
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="playerName">If you want to appear in the scoreboard, type in your player name: </label>
                     <input
                         className="form-control"
                         onChange={onChange}
@@ -57,21 +72,6 @@ const NewGamePanel = ({ game, onNewGameClick, onChange, onRestartClick, loading 
                         placeholder="myBoardToShareWithFriends"
                         maxLength="256"
                         />
-                </div>
-                <div className="form-group">
-                    <input
-                        className="btn btn-primary"
-                        type="submit"
-                        value={loading ? 'Loading...' : 'New Game'}
-                        onClick={onNewGameClick}
-                        disabled={loading}
-                    />
-                    <input
-                        className="btn btn-primary"
-                        type="submit"
-                        value="Restart"
-                        onClick={onRestartClick}
-                    />
                 </div>
             </form>
         </div>

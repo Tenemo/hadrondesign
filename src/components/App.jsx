@@ -12,7 +12,7 @@ toastr.options = {
     // hideEasing: 'linear',
     // closeEasing: 'linear',
     // preventDuplicates: true,
-    //closeDuration: 300,
+    // closeDuration: 300,
     timeOut: 0,
     extendedTimeOut: 0
 };

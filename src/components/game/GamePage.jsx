@@ -56,15 +56,17 @@ export class GamePage extends React.Component {
                         <Board game={this.props.game} onMoveClick={this.onMoveClick} />
                     </div>
                     <div className="col-sm-5 col-md-4 col-lg-3">
-                        {!this.props.game.gameId && <div className="exampleBox">
-                            <p>Game objective: make every tile gray in the least amount of moves and time.</p>
-                            <div className="example">
-                                <Tile type={1} coords={[3, 0]} size={8} isDisabled />
-                                &nbsp;&nbsp;{'=>'}&nbsp;&nbsp;
+                        <div className="exampleBox">
+                            {!this.props.game.gameId && <React.Fragment>
+                                <p>Game objective: make every tile gray in the least amount of moves and time.</p>
+                                <div className="example">
+                                    <Tile type={1} coords={[3, 0]} size={8} isDisabled />
+                                    &nbsp;&nbsp;{'=>'}&nbsp;&nbsp;
                                 <Tile type={0} coords={[3, 0]} size={8} isDisabled />
-                            </div>
-                            <p className="newGameTip">Start a new game to begin.</p>
-                        </div>}
+                                </div>
+                                <p className="newGameTip">Start a new game to begin.</p>
+                            </React.Fragment>}
+                        </div>
                         <NewGamePanel
                             game={this.props.game}
                             onNewGameClick={this.onNewGameClick}

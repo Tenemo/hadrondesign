@@ -79,7 +79,13 @@ export function winGame(game) {
             })
             .then(res => res.json())
             .then(game => {
-                toastr.success('Total score: ' + game.score + '</br> Time: ' + Math.trunc(game.time / 1000) + ' s</br> Number of moves: ' + game.moveCount, '😎 Great job!');
+                toastr.success(
+                    'Total score: ' + game.score + '</br> Time: ' + Math.trunc(game.time / 1000) + ' s</br> Number of moves: ' + game.moveCount,
+                    '😎 Great job!',
+                    {
+                        timeOut: 8000,
+                        progressBar: true
+                });
                 dispatch(winGameSuccess(game));
             })
             .then(game => {
