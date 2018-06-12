@@ -1,20 +1,26 @@
 @import 'variables';
 @import 'node_modules/bootstrap/scss/bootstrap';
-
 body {
     background-color: $primary-bg;
     font-family: $primary-font;
     color: $primary;
 }
+
 .main-container {
     margin-top: 70px;
 }
+
 .jumbotron {
     background-color: $secondary;
 }
 
-a.active {
-    color: white;
+a {
+    &.active {
+        color: white;
+    }
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 .simpleBox {
@@ -25,4 +31,3 @@ a.active {
 .btn {
     margin: 3px;
 }
-

@@ -1,7 +1,8 @@
 import * as types from './actionTypes';
 import fetch from 'node-fetch';
 
-const api = 'http://192.168.0.103:4000';
+//const api = 'http://192.168.0.103:4000';
+const api = 'http://leczna.online:8080';
 
 export function newGame(newSize = 4, easyMode, seed, previousId) {
     return dispatch => {
