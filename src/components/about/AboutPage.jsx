@@ -3,9 +3,9 @@ import React from 'react';
 class AboutPage extends React.Component {
     render() {
         return (
-        <div className="jumbotron">
-            <h1>About</h1>
-        </div>
+        <section className="about">
+            <h2>About</h2>
+        </section>
         );
     }
 }

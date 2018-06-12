@@ -1,64 +1,90 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header matches snapshot 1`] = `
-<div
-  className="navbar navbar-expand-sm navbar-light bg-light navbar-nav"
+<nav
+  className="navbar navbar-expand-sm bg-dark fixed-top"
 >
   <Link
     className="navbar-brand"
     replace={false}
     to="/"
   >
-    HD
+    <img
+      height="30"
+      src="HD.svg"
+      width="30"
+    />
   </Link>
-  <NavLink
-    activeClassName="active"
-    aria-current="page"
-    className="nav-item"
-    exact={true}
-    to="/"
+  <button
+    aria-controls="headerNavbar"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    className="navbar-toggler"
+    data-target="#headerNavba"
+    data-toggle="collapse"
+    type="button"
   >
-    <div
-      className="nav-link"
-    >
-      About
-    </div>
-  </NavLink>
-  <NavLink
-    activeClassName="active"
-    aria-current="page"
-    className="nav-item"
-    to="/portfolio"
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    className="collapse navbar-collapse"
+    id="headerNavbar"
   >
-    <div
-      className="nav-link"
+    <ul
+      className="navbar-nav mr-auto"
     >
-      Portfolio
-    </div>
-  </NavLink>
-  <NavLink
-    activeClassName="active"
-    aria-current="page"
-    className="nav-item"
-    to="/game"
-  >
-    <div
-      className="nav-link"
-    >
-      Game
-    </div>
-  </NavLink>
-  <NavLink
-    activeClassName="active"
-    aria-current="page"
-    className="nav-item"
-    to="/contact"
-  >
-    <div
-      className="nav-link"
-    >
-      Contact
-    </div>
-  </NavLink>
-</div>
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="nav-item"
+        exact={true}
+        to="/"
+      >
+        <div
+          className="nav-link"
+        >
+          About
+        </div>
+      </NavLink>
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="nav-item"
+        to="/portfolio"
+      >
+        <div
+          className="nav-link"
+        >
+          Portfolio
+        </div>
+      </NavLink>
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="nav-item"
+        to="/game"
+      >
+        <div
+          className="nav-link"
+        >
+          Game
+        </div>
+      </NavLink>
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="nav-item"
+        to="/contact"
+      >
+        <div
+          className="nav-link"
+        >
+          Contact
+        </div>
+      </NavLink>
+    </ul>
+  </div>
+</nav>
 `;

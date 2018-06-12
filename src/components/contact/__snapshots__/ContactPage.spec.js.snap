@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ContactPage matches snapshot 1`] = `
-<div
-  className="jumbotron"
+<section
+  className="contact"
 >
-  <h1>
+  <h2>
     piotr@hadron.design
-  </h1>
-</div>
+  </h2>
+</section>
 `;

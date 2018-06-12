@@ -1,8 +1,7 @@
 @import '../../styles/variables';
 $tileSize: 60px;
-.gamePage {
-    margin-top: 20px;
-}
+// .gamePage {
+// }
 
 .board {
     .boardRow {
@@ -16,11 +15,12 @@ $tileSize: 60px;
 .panel {
     word-wrap: break-word;
     .moves {
-        height: 100px;
-        overflow-y: scroll;
+        max-height: 200px;
+        overflow-y: auto;
     }
 }
 .highScores {
+    overflow-x: auto;
     table {
         width: 100%;
         td {
@@ -28,7 +28,7 @@ $tileSize: 60px;
             padding-right: 8px;
         }
         tr {
-            border-top: 1px $secondary-color solid;
+            border-top: 1px $secondary solid;
         }
     }
 }
@@ -64,11 +64,11 @@ $tileSize: 60px;
         z-index: 2;
         /* for firefox 31 */
         transform: rotateY(0deg);
-        background-color: $primary-color;
+        background-color: $primary;
     }
     .back {
         transform: rotateY(180deg);
-        background-color: $secondary-color;
+        background-color: $secondary;
     }
     &.inactive {
         visibility: hidden;
@@ -85,10 +85,10 @@ $tileSize: 60px;
     &.flipped {
         .front,
         .back {
-            background-color: $game-dark;
-            color: $game-dark;
+            background-color: lighten($dark, 10%);
+            color: lighten($dark, 10%);
             &:hover {
-                background-color: lighten($game-dark, 10%);
+                background-color: lighten($dark, 20%);
                 color: white;
                 cursor: pointer;
                 font-weight: 300;
@@ -101,9 +101,9 @@ $tileSize: 60px;
     &.active {
         .front,
         .back {
-            color: $primary-color;
+            color: $primary;
             &:hover {
-                background-color: lighten($primary-color, 20%);
+                background-color: lighten($primary, 20%);
                 color: $primary-bg;
                 font-weight: 700;
                 cursor: pointer;

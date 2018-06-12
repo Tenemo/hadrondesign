@@ -6,10 +6,12 @@ import Header from './common/Header';
 class App extends React.Component {
     render() {
         return (
-            <div className="container-fluid">
+            <React.Fragment>
                 <Header />
-                <Routes />
-            </div>
+                <div className="container-fluid main-container">
+                    <Routes />
+                </div>
+            </React.Fragment>
         );
     }
 }

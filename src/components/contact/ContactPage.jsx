@@ -2,9 +2,9 @@ import React from 'react';
 
 const ContactPage = () => {
         return (
-        <div className="jumbotron">
-            <h1>piotr@hadron.design</h1>
-        </div>
+        <section className="contact">
+            <h2>piotr@hadron.design</h2>
+        </section>
     );
 };
 

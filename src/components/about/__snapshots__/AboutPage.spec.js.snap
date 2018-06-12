@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AboutPage matches snapshot 1`] = `
-<div
-  className="jumbotron"
+<section
+  className="about"
 >
-  <h1>
+  <h2>
     About
-  </h1>
-</div>
+  </h2>
+</section>
 `;

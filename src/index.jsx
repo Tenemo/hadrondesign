@@ -9,8 +9,6 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import './styles/global.scss';
 import {getHighScores} from './actions/gameActions';
 
-console.log('NODE_ENV = ' + process.env.NODE_ENV);
-
 const store = configureStore();
 store.dispatch(getHighScores());
 

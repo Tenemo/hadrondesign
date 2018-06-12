@@ -67,16 +67,16 @@ export class GamePage extends React.Component {
                     </div>
                 </div>
                 <div className="row justify-content-between">
-                    <div className="col-sm-7 col-md-8 col-lg-9">
-                        <HighScores highScores={this.props.game.highScores} />
-                    </div>
-                    <div className="col-sm-5 col-md-4 col-lg-3">
+                    <div className="col-sm-5 col-md-4 col-lg-3 order-sm-last">
                         <CurrentPanel
                             gameId={this.props.game.gameId}
                             leftCount={this.props.game.leftCount}
                             moveCount={this.props.game.moveCount}
                             moves={this.props.game.moves}
                         />
+                    </div>
+                    <div className="col-sm-7 col-md-8 col-lg-9">
+                        <HighScores highScores={this.props.game.highScores} />
                     </div>
                 </div>
             </div>
