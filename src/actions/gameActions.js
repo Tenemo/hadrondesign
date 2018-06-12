@@ -79,7 +79,7 @@ export function winGame(game) {
             })
             .then(res => res.json())
             .then(game => {
-                toastr.success('Total score: ' + game.score + '</br> Time: ' + game.time + '</br> # of moves: ' + game.moveCount, '😎 Great job!');
+                toastr.success('Total score: ' + game.score + '</br> Time: ' + Math.trunc(game.time / 1000) + '</br> # of moves: ' + game.moveCount, '😎 Great job!');
                 dispatch(winGameSuccess(game));
             })
             .then(game => {

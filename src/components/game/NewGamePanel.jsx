@@ -21,7 +21,9 @@ const NewGamePanel = ({ game, onNewGameClick, onChange, onRestartClick, loading 
                         value={game.playerName}
                         type="text"
                         name="playerName"
-                        placeholder="myPlayerName" />
+                        placeholder="myPlayerName"
+                        maxLength="32"
+                        />
                 </div>
                 <div className="form-group">
                     <label htmlFor="newSize">Board size: </label>
@@ -52,7 +54,9 @@ const NewGamePanel = ({ game, onNewGameClick, onChange, onRestartClick, loading 
                         value={game.seed}
                         type="text"
                         name="seed"
-                        placeholder="myBoardToShareWithFriends" />
+                        placeholder="myBoardToShareWithFriends"
+                        maxLength="256"
+                        />
                 </div>
                 <div className="form-group">
                     <input

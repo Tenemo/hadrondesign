@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 import LoadingDots from './LoadingDots';
 import { connect } from 'react-redux';
 import './header.scss';
@@ -22,22 +22,22 @@ export class Header extends React.Component {
                     <div className="collapse navbar-collapse" id="headerNavbar">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item">
-                                <NavLink activeClassName="active" activeStyle={{ color:'red' }} exact to="/" className="nav-link">
+                                <NavLink exact to="/" className="nav-link">
                                     About
                                 </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink activeClassName="active" activeStyle={{ color:'red' }} to="/portfolio" className="nav-link">
+                                <NavLink to="/portfolio" className="nav-link">
                                     Portfolio
                                 </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink activeClassName="active" activeStyle={{ color:'red' }} to="/game" className="nav-link">
+                                <NavLink to="/game" className="nav-link">
                                     Game
                                 </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink activeClassName="active" activeStyle={{ color:'red' }} to="/contact" className="nav-link">
+                                <NavLink to="/contact" className="nav-link">
                                     Contact
                                 </NavLink>
                             </li>
@@ -60,4 +60,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(Header);
+export default withRouter(connect(mapStateToProps)(Header));
