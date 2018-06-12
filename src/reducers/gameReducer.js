@@ -27,8 +27,7 @@ export default function gameReducer(state = initialState.game, action) {
             newState = objectAssign({}, state);
             // if .push is used EVEN on newState, I get "A state mutation was detected inside a dispatch",
             // googled for a couple of hours, still have no clue why is that
-            console.log(JSON.stringify(action.move))
-            newState.moves.concat(action.move);
+            newState.moves = newState.moves.concat(action.move);
             newState.moveCount++;
             newState = updateBoard(JSON.parse(JSON.stringify(newState)), action.move);
             return newState;
