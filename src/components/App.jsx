@@ -1,7 +1,20 @@
 import React from 'react';
-import { hot } from 'react-hot-loader';
 import Routes from './Routes';
 import Header from './common/Header';
+import { hot } from 'react-hot-loader';
+import toastr from 'toastr';
+toastr.options = {
+    closeButton: true,
+    // showMethod: 'slideDown',
+    // hideMethod:'slideUp',
+    // closeMethod:'slideUp',
+    // showEasing: 'swing',
+    // hideEasing: 'linear',
+    // closeEasing: 'linear',
+    // preventDuplicates: true,
+    //closeDuration: 300,
+    timeOut: 0
+};
 
 class App extends React.Component {
     render() {

@@ -1,12 +1,14 @@
 import * as types from './actionTypes';
 import fetch from 'node-fetch';
+import { beginAjaxCall, ajaxCallError } from './ajaxStatusActions';
+import toastr from 'toastr';
 
-//const api = 'http://192.168.0.103:4000';
 const api = 'http://leczna.online:8080';
 
 export function newGame(newSize = 4, easyMode, seed, previousId) {
     return dispatch => {
-        fetch(api + '/api/game/new', {
+        dispatch(beginAjaxCall());
+        return fetch(api + '/api/game/new', {
             method: 'post',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8'
@@ -18,11 +20,24 @@ export function newGame(newSize = 4, easyMode, seed, previousId) {
                 'previousId': previousId,
             })
         })
+            .then(res => {
+                if (!res.ok) {
+                    throw Error(res.statusText);
+                }
+                return res;
+            })
             .then(res => res.json())
             .then(newGame => {
+                toastr.success('New game loaded!', null, {
+                    timeOut: 1500,
+                    closeButton: false,
+                    preventDuplicates: true
+                });
                 dispatch(newGameSuccess(newGame));
             })
             .catch(err => {
+                toastr.error('Couldn\'t load a new game 😥 \n' + err);
+                dispatch(ajaxCallError());
                 throw (err);
             });
     };
@@ -44,7 +59,9 @@ export function makeMove(move) {
 
 export function winGame(game) {
     return dispatch => {
-        fetch(api + '/api/game/' + game.gameId, {
+        //console.log('winGame() action');
+        dispatch(beginAjaxCall());
+        return fetch(api + '/api/game/' + game.gameId, {
             method: 'put',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8'
@@ -54,17 +71,30 @@ export function winGame(game) {
                 'playerName': game.playerName
             })
         })
+            .then(res => {
+                if (!res.ok) {
+                    throw Error(res.statusText);
+                }
+                return res;
+            })
             .then(res => res.json())
             .then(game => {
+                toastr.success('Total score: ' + game.score + '</br> Time: ' + game.time + '</br> # of moves: ' + game.moveCount, '😎 Great job!');
                 dispatch(winGameSuccess(game));
             })
+            .then(game => {
+                dispatch(getHighScores(game));
+            })
             .catch(err => {
+                toastr.error('Request error, your game wasn\'t saved 😥 \n' + err);
+                dispatch(ajaxCallError());
                 throw (err);
             });
     };
 }
 
 export function winGameSuccess(game) {
+    //console.log('winGameSuccess() action');
     return {
         type: types.WIN_GAME_SUCCESS,
         game
@@ -81,20 +111,31 @@ export function updateOnChange(name, value) {
 
 export function getHighScores() {
     return dispatch => {
-        fetch(api + '/api/game/highScores', {
+        //console.log('getHighScores() action');
+        dispatch(beginAjaxCall());
+        return fetch(api + '/api/game/highScores', {
             method: 'get'
         })
+            .then(res => {
+                if (!res.ok) {
+                    throw Error(res.statusText);
+                }
+                return res;
+            })
             .then(res => res.json())
             .then(highScores => {
                 dispatch(getHighScoresSuccess(highScores));
             })
             .catch(err => {
+                toastr.error('Couldn\'t load high scores from the server 😥 \n Most likely Piotr turned off the server. \n' + err);
+                dispatch(ajaxCallError());
                 throw (err);
             });
     };
 }
 
 export function getHighScoresSuccess(highScores) {
+    //console.log('getHighScoresSuccess() action');
     return {
         type: types.GET_HIGH_SCORES_SUCCESS,
         highScores

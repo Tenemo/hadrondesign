@@ -7,6 +7,7 @@ export default function gameReducer(state = initialState.game, action) {
     let newState;
     switch (action.type) {
         case types.NEW_GAME_SUCCESS:
+            //console.log('NEW_GAME_SUCCESS REDUCER');
             newState = objectAssign({}, state);
             newState.isDisabled = false;
             newState.board = action.newGame.board;

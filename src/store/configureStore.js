@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import rootReducer from '../reducers';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import { routerMiddleware } from 'react-router-redux';
@@ -27,11 +27,12 @@ function configureStoreDev(initialState) {
         )
     );
     if (module.hot) {
+        // Enable Webpack hot module replacement for reducers
         module.hot.accept('../reducers', () => {
-            const nextReducer = require('../reducers').default;
-            store.replaceReducer(nextReducer);
+          const nextReducer = require('../reducers').default;
+          store.replaceReducer(nextReducer);
         });
-    }
+      }
     return store;
 }
 

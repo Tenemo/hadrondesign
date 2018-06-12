@@ -35,7 +35,7 @@ export default {
             Popper: 'popper.js/dist/umd/popper' // https://github.com/FezVrasta/bootstrap-material-design/issues/1296
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].[hash].css',
+            filename: 'styles.css',
             chunkFilename: '[id].[hash].css'
         }),
         new HtmlWebpackPlugin({

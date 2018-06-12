@@ -1,33 +1,63 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom'; // eslint-disable-line no-unused-vars
+import PropTypes from 'prop-types';
+import { Link, NavLink } from 'react-router-dom';
+import LoadingDots from './LoadingDots';
+import { connect } from 'react-redux';
+import './header.scss';
 
-const Header = () => {
-    return (
-        <nav className="navbar navbar-expand-sm bg-dark fixed-top">
-            <Link to="/" className="navbar-brand">
-                    <img src="HD.svg" width="30" height="30"/>
-            </Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerNavba" aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon" />
-            </button>
-            <div className="collapse navbar-collapse" id="headerNavbar">
-                <ul className="navbar-nav mr-auto">
-                    <NavLink exact to="/" className="nav-item">
-                        <div className="nav-link">About</div>
-                    </NavLink>
-                    <NavLink to="/portfolio" className="nav-item">
-                        <div className="nav-link">Portfolio</div>
-                    </NavLink>
-                    <NavLink to="/game" className="nav-item">
-                        <div className="nav-link">Game</div>
-                    </NavLink>
-                    <NavLink to="/contact" className="nav-item">
-                        <div className="nav-link">Contact</div>
-                    </NavLink>
-                </ul>
-            </div>
-        </nav>
-    );
+export class Header extends React.Component {
+    constructor(props, context) {
+        super(props, context);
+    }
+    render() {
+        return (
+            <React.Fragment>
+                <nav className="navbar navbar-expand-sm bg-dark fixed-top">
+                    <Link to="/" className="navbar-brand">
+                        <img src="HD.svg" width="30" height="30" />
+                    </Link>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerNavbar" aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon" />
+                    </button>
+                    <div className="collapse navbar-collapse" id="headerNavbar">
+                        <ul className="navbar-nav mr-auto">
+                            <li className="nav-item">
+                                <NavLink activeClassName="active" activeStyle={{ color:'red' }} exact to="/" className="nav-link">
+                                    About
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink activeClassName="active" activeStyle={{ color:'red' }} to="/portfolio" className="nav-link">
+                                    Portfolio
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink activeClassName="active" activeStyle={{ color:'red' }} to="/game" className="nav-link">
+                                    Game
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink activeClassName="active" activeStyle={{ color:'red' }} to="/contact" className="nav-link">
+                                    Contact
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                {this.props.loading && <LoadingDots className="loadingDots fixed-top" interval={100} dots={20} />}
+            </React.Fragment>
+        );
+    }
+}
+
+Header.propTypes = {
+    loading: PropTypes.bool
 };
 
-export default Header;
+function mapStateToProps(state) {
+    return {
+        loading: state.ajaxCallsInProgress > 0
+    };
+}
+
+export default connect(mapStateToProps)(Header);

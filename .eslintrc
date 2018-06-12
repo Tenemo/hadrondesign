@@ -106,6 +106,7 @@
         "react/react-in-jsx-scope": 0,
         "react/self-closing-comp": 1,
         "react/sort-comp": 1,
-        "react-pug/no-broken-template": 0
+        "react-pug/no-broken-template": 0,
+        "import/no-named-as-default": 0
     }
 }

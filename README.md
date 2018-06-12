@@ -1,4 +1,4 @@
-# hadrondesign
+# hadron.design
 
 ## TODO
 - toastr/popup when won/restarted/newgame

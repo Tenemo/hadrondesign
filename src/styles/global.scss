@@ -1,5 +1,5 @@
 @import 'variables';
-@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'vendor';
 body {
     background-color: $primary-bg;
     font-family: $primary-font;
@@ -30,4 +30,15 @@ a {
 
 .btn {
     margin: 3px;
+    &:focus {
+        outline:none;
+        box-shadow:none;
+    }
+}
+
+#toast-container {
+    .toast {
+        box-shadow: none;
+        opacity: 0.9;
+    }
 }

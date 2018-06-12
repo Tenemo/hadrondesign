@@ -9,6 +9,7 @@ for (let i = 0; i < defaultSize; i++) {
 export default {
     game: {
         board: defaultBoard,
+        receivedBoard: [],
         size: defaultSize,
         newSize: defaultSize,
         leftCount: undefined,
@@ -19,7 +20,7 @@ export default {
         seed: '',
         easyMode: false,
         highScores: [],
-        isDisabled: true,
-        //receivedBoard: undefined
-    }
+        isDisabled: true
+    },
+    ajaxCallsInProgress: 0
 };

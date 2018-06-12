@@ -1,7 +1,8 @@
 @import 'fonts';
 
 // bootstrap override
-$primary : #F69F1D;
+$primary : rgb(246, 159, 29);
+$primary-string : "rgb(246, 159, 29)";
 $secondary : rgb(134, 134, 134);
 $dark: #1E1E1E;
 $light: $secondary;

@@ -18,20 +18,17 @@ export class GamePage extends React.Component {
         this.restartBoard = this.restartBoard.bind(this);
     }
     onMoveClick = event => {
-        //this.props.actions.makeMove(e.target.name);
-        Promise.resolve(this.props.actions.makeMove(event.target.getAttribute('coords')))
+        let coords = event.target.getAttribute('coords');
+        Promise.resolve(this.props.actions.makeMove(coords))
             .then(() => {
                 if (this.props.game.leftCount === 0) {
-                    Promise.resolve(this.props.actions.winGame(this.props.game)).
-                        then(() => {
-                            this.props.actions.getHighScores();
-                        });
+                    this.props.actions.winGame(this.props.game);
                 }
             });
     }
+
     onNewGameClick = event => {
         event.preventDefault();
-        this.props.actions.getHighScores();
         this.props.actions.newGame(
             this.props.game.newSize,
             this.props.game.easyMode,
@@ -63,6 +60,7 @@ export class GamePage extends React.Component {
                             onNewGameClick={this.onNewGameClick}
                             onChange={this.updateGameState}
                             onRestartClick={this.restartBoard}
+                            loading={this.props.loading}
                         />
                     </div>
                 </div>
@@ -86,12 +84,14 @@ export class GamePage extends React.Component {
 
 GamePage.propTypes = {
     game: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired
+    actions: PropTypes.object.isRequired,
+    loading: PropTypes.bool
 };
 
 function mapStateToProps(state) {
     return {
-        game: state.game
+        game: state.game,
+        loading: state.ajaxCallsInProgress > 0
     };
 }
 
