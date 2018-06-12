@@ -10,13 +10,12 @@ export default function gameReducer(state = initialState.game, action) {
             newState = objectAssign({}, state);
             newState.isDisabled = false;
             newState.board = action.newGame.board;
-            newState.initialBoard = action.newGame.board;
+            newState.receivedBoard = JSON.parse(JSON.stringify(newState.board));
             newState.gameId = action.newGame.gameId;
             newState.size = action.newGame.size;
             newState.leftCount = 0;
             newState.moves = [];
             newState.moveCount = 0;
-            //console.log(newState.board[0]);
             for (let i = 0; i < newState.board.length; ++i) {
                 for (let j = 0; j < newState.board[i].length; ++j) {
                     if (newState.board[i][j] == 1)
@@ -46,9 +45,10 @@ export default function gameReducer(state = initialState.game, action) {
             return newState;
         case types.RESTART_BOARD:
             newState = objectAssign({}, state);
+            newState.board = JSON.parse(JSON.stringify(newState.receivedBoard));
             newState.moves = [];
             newState.moveCount = 0;
-            newState.initialBoard = newState.board;
+            newState.leftCount = 0;
             for (let i = 0; i < newState.board.length; ++i) {
                 for (let j = 0; j < newState.board[i].length; ++j) {
                     if (newState.board[i][j] == 1)

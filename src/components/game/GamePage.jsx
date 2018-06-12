@@ -22,7 +22,10 @@ export class GamePage extends React.Component {
         Promise.resolve(this.props.actions.makeMove(event.target.getAttribute('coords')))
             .then(() => {
                 if (this.props.game.leftCount === 0) {
-                    this.props.actions.winGame(this.props.game);
+                    Promise.resolve(this.props.actions.winGame(this.props.game)).
+                        then(() => {
+                            this.props.actions.getHighScores();
+                        });
                 }
             });
     }
@@ -51,7 +54,7 @@ export class GamePage extends React.Component {
         return (
             <div className="gamePage">
                 <div className="row">
-                    <div className="col-sm-7 col-md-8 align-self-center">
+                    <div className="col-sm-7 col-md-8 col-lg-9 align-self-center">
                         <Board game={this.props.game} onMoveClick={this.onMoveClick} />
                     </div>
                     <div className="col-sm-5 col-md-4 col-lg-3">
@@ -59,15 +62,15 @@ export class GamePage extends React.Component {
                             game={this.props.game}
                             onNewGameClick={this.onNewGameClick}
                             onChange={this.updateGameState}
-                            onRestartClick={this.props.actions.restartBoard}
+                            onRestartClick={this.restartBoard}
                         />
                     </div>
                 </div>
                 <div className="row justify-content-between">
-                    <div className="col-sm-7 col-md-6 col-lg-5">
+                    <div className="col-sm-7 col-md-8 col-lg-9">
                         <HighScores highScores={this.props.game.highScores} />
                     </div>
-                    <div className="col-sm-5 col-md-4">
+                    <div className="col-sm-5 col-md-4 col-lg-3">
                         <CurrentPanel
                             gameId={this.props.game.gameId}
                             leftCount={this.props.game.leftCount}

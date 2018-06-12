@@ -6,7 +6,6 @@ for (let i = 0; i < defaultSize; i++) {
         defaultBoard[i].push(0);
     }
 }
-console.log(JSON.stringify(defaultBoard));
 export default {
     game: {
         board: defaultBoard,
@@ -21,6 +20,6 @@ export default {
         easyMode: false,
         highScores: [],
         isDisabled: true,
-        initialBoard: undefined
+        //receivedBoard: undefined
     }
 };
