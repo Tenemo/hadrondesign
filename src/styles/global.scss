@@ -42,3 +42,8 @@ a {
         opacity: 0.9;
     }
 }
+
+::selection {
+    color: white;
+    background: $primary;
+}

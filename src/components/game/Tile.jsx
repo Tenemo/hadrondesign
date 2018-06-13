@@ -17,10 +17,10 @@ const Tile = ({type, coords, size, onMoveClick, isDisabled}) => {
         <div className={tileClass}>
             <div className="tileInside">
                 <div className="front" coords={coords} onClick={onMoveClick}>
-                    {coords}
+                    <span className="d-none d-sm-block">{coords}</span>
                 </div>
                 <div className="back" coords={coords} onClick={onMoveClick}>
-                    {coords}
+                    <span className="d-none d-sm-block">{coords}</span>
                 </div>
             </div>
         </div>

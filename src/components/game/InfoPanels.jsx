@@ -5,23 +5,33 @@ const Panel = ({ game }) => {
     return (
         <div className="panel">
             <div className="simpleBox">
-                <h5>Current Game</h5>
-                <p>
-                    Game ID: {game.gameId}
-                </p>
-                <p>
+                {game.gameId &&
+                    <React.Fragment>
+                        <h5>Current Game</h5>
+                        <p>
+                            Game ID: {game.gameId}
+                        </p>
+                    </React.Fragment>
+                }
+                {game.leftCount != null && game.leftCount != 0 && <p>
                     Tiles left to flip: {game.leftCount}
-                </p>
-                <p>
+                </p>}
+                {game.moveCount != null && game.moveCount != 0 && <p>
                     Move count: {game.moveCount}
-                </p>
-                Moves made:
-            <p className="moves">
-                    {game.moves.map((move, i) => <React.Fragment key={i}>{!!i && ', '}{move}</React.Fragment>)}
-                </p>
+                </p>}
+                {game.moves != null && game.moves.length != 0 && <p className="moves">
+                    Moves made: {game.moves.map((move, i) => <React.Fragment key={i}>{!!i && ', '}{move}</React.Fragment>)}
+                </p>}
             </div>
             <div className="simpleBox">
-                <h5>Previous Game</h5>
+                {game.previous.gameId &&
+                    <React.Fragment>
+                        <h5>Previous Won Game</h5>
+                        <p>
+                            Game ID: {game.previous.gameId}
+                        </p>
+                    </React.Fragment>
+                }
                 {game.previous.score && <p>
                     Score: {game.previous.score}
                 </p>}
@@ -33,9 +43,6 @@ const Panel = ({ game }) => {
                 </p>}
                 {game.previous.time && <p>
                     Time: {Math.trunc(game.previous.time / 1000)} s
-                </p>}
-                {game.previous.gameId && <p>
-                    Game ID: {game.previous.gameId}
                 </p>}
                 {game.previous.seed && <p>
                     Seed: {game.previous.seed}
@@ -49,9 +56,8 @@ const Panel = ({ game }) => {
                 {game.previous.playerName && <p>
                     Player name: {game.previous.playerName}
                 </p>}
-                    Moves made:
-                {game.previous.moves && <p className="moves">
-                    {game.previous.moves.map((move, i) => <React.Fragment key={i}>{!!i && ', '}{move}</React.Fragment>)}
+                {game.previous.moves != null && game.previous.moves.length !== 0 && <p className="moves">
+                    Moves made: {game.previous.moves.map((move, i) => <React.Fragment key={i}>{!!i && ', '}{move}</React.Fragment>)}
                 </p>}
             </div>
         </div>

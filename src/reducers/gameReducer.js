@@ -46,6 +46,9 @@ export default function gameReducer(state = initialState.game, action) {
                 playerName: newState.playerName,
             };
             newState.previous.moves = JSON.parse(JSON.stringify(newState.moves));
+            newState.moves = [];
+            newState.moveCount = 0;
+            newState.gameId = '';
             newState.isDisabled = true;
             return newState;
         case types.UPDATE_ON_CHANGE:
