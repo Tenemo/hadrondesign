@@ -12,7 +12,7 @@ export class Header extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <nav className="navbar navbar-expand-sm bg-dark fixed-top">
+                <nav className="navbar navbar-expand-sm bg-light fixed-top">
                     <Link to="/" className="navbar-brand">
                         <img src="HD.svg" width="30" height="30" />
                     </Link>

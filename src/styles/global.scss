@@ -16,7 +16,7 @@ body {
 
 a {
     &.active {
-        color: white;
+        color: $active;
     }
     &:hover {
         text-decoration: none;

@@ -49,8 +49,11 @@
     font-size: 2vh;
     max-width: 50px;
     width: 100%;
+    //margin: 0.2%;
     margin: 1px;
-    margin: 0.15%;
+    @media (min-width: 576px) {
+        margin: 0.13%;
+    }
     perspective: 200px;
     user-select: none;
     .front,
@@ -80,11 +83,11 @@
         z-index: 2;
         /* for firefox 31 */
         transform: rotateY(0deg);
-        background-color: $primary;
+        background-color: $activeTile;
     }
     .back {
         transform: rotateY(180deg);
-        background-color: $secondary;
+        background-color: $flippedTile;
     }
     &.inactive {
         visibility: hidden;
@@ -101,11 +104,11 @@
     &.flipped {
         .front,
         .back {
-            background-color: lighten($dark, 10%);
-            color: lighten($dark, 10%);
+            background-color: $flippedTile;
+            color: $flippedTile;
             &:hover {
-                background-color: lighten($dark, 20%);
-                color: white;
+                background-color: darken($flippedTile, 10%);
+                color: lighten($flippedTile, 20%);
                 cursor: pointer;
                 font-weight: 300;
             }
@@ -117,9 +120,9 @@
     &.active {
         .front,
         .back {
-            color: $primary;
+            color: $activeTile;
             &:hover {
-                background-color: lighten($primary, 20%);
+                background-color: lighten($activeTile, 10%);
                 color: $primary-bg;
                 font-weight: 700;
                 cursor: pointer;

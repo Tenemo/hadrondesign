@@ -26,10 +26,8 @@ export default function gameReducer(state = initialState.game, action) {
             return newState;
         case types.MAKE_MOVE:
             newState = objectAssign({}, state);
-            console.log(JSON.stringify(action.move));
             newState.moves = newState.moves.concat(action.move);
             newState.moveCount++;
-            console.log(JSON.stringify(action.move));
             newState = updateBoard(JSON.parse(JSON.stringify(newState)), action.move);
             return newState;
         case types.WIN_GAME_SUCCESS:
