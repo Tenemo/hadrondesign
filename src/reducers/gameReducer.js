@@ -9,7 +9,6 @@ export default function gameReducer(state = initialState.game, action) {
         case types.NEW_GAME_SUCCESS:
             //console.log('NEW_GAME_SUCCESS REDUCER');
             newState = objectAssign({}, state);
-            newState.isDisabled = false;
             newState.board = action.newGame.board;
             newState.receivedBoard = JSON.parse(JSON.stringify(newState.board));
             newState.gameId = action.newGame.gameId;
@@ -23,6 +22,7 @@ export default function gameReducer(state = initialState.game, action) {
                         newState.leftCount++;
                 }
             }
+            newState.isDisabled = false;
             return newState;
         case types.MAKE_MOVE:
             newState = objectAssign({}, state);

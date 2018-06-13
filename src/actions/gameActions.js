@@ -9,6 +9,7 @@ export function newGame(newSize, easyMode, seed, previousId) {
     return dispatch => {
         dispatch(beginAjaxCall());
         return fetch(api + '/api/game/new', {
+            timeout: 5000,
             method: 'post',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8'
@@ -63,6 +64,7 @@ export function winGame(game) {
         //console.log('winGame() action');
         dispatch(beginAjaxCall());
         return fetch(api + '/api/game/' + game.gameId, {
+            timeout: 20000,
             method: 'put',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8'
@@ -86,7 +88,7 @@ export function winGame(game) {
                     scoreMsg,
                     '😎 Great job!',
                     {
-                        timeOut: 1000,
+                        timeOut: 2000,
                         extendedTimeOut: 0
                 });
                 dispatch(winGameSuccess(game));
@@ -123,6 +125,7 @@ export function getHighScores() {
         //console.log('getHighScores() action');
         dispatch(beginAjaxCall());
         return fetch(api + '/api/game/highScores', {
+            timeout: 5000,
             method: 'get'
         })
             .then(res => {

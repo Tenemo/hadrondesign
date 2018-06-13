@@ -40,7 +40,7 @@ const Panel = ({ game }) => {
                 {game.previous.seed && <p>
                     Seed: {game.previous.seed}
                 </p>}
-                {game.previous.isSeedCustom && <p>
+                {game.previous.isSeedCustom != null && <p>
                     Was seed custom: {JSON.stringify(game.previous.isSeedCustom)}
                 </p>}
                 {game.previous.easyMode != null && <p>

@@ -58,13 +58,13 @@ export class GamePage extends React.Component {
                     <div className="col-sm-5 col-md-4 col-lg-3">
                         <div className="exampleBox">
                             {!this.props.game.gameId && <React.Fragment>
-                                <p>Game objective: make every tile gray in the least amount of moves and time.</p>
+                                <p>Game objective: <span className="boldTip">flip every tile to the gray side.</span> Score is based on board size, time spent and amount of moves. Every single board is guaranteed to be solvable.</p>
                                 <div className="example">
                                     <Tile type={1} coords={[3, 0]} size={8} isDisabled />
                                     &nbsp;&nbsp;{'=>'}&nbsp;&nbsp;
                                 <Tile type={0} coords={[3, 0]} size={8} isDisabled />
                                 </div>
-                                <p className="newGameTip">Start a new game to begin.</p>
+                                <p className="boldTip">Start a new game to begin.</p>
                             </React.Fragment>}
                         </div>
                         <NewGamePanel

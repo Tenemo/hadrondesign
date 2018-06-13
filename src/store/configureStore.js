@@ -10,11 +10,7 @@ export const history = createHistory();
 function configureStoreDev(initialState) {
     const reactRouterMiddleware = routerMiddleware(history);
     const middleware = [
-        reduxImmutableStateInvariant({
-            ignore: [
-                'game.board'
-            ]
-        }),
+        reduxImmutableStateInvariant(),
         thunk,
         reactRouterMiddleware
     ];
