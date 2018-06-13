@@ -7,6 +7,7 @@ import gameClientConfig from '../../config/gameClientConfig';
  * @return {boolean}
  */
 export function updateBoard(game, move) {
+    console.log(JSON.stringify(move));
     let board = game.board;
     let size = game.size;
     let leftCount = game.leftCount;
@@ -123,6 +124,8 @@ export function numToAlpha(moveArray, size, type) {
  * @return {string}
  */
 export function alphaToNum(move, size) {
+    console.log(JSON.stringify(move));
+    console.log(JSON.stringify(size));
     // extract integer from the end of the string to row
     let row = (move.match(/\d+$/) || []).pop();
     // remove row from the string

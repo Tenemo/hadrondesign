@@ -72,6 +72,9 @@
         transition: 0.3s;
         transform-style: preserve-3d;
         position: relative;
+        > span {
+            pointer-events: none
+        }
     }
     .front {
         z-index: 2;
