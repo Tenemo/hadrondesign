@@ -21,12 +21,11 @@ jspm_packages/
 .env
 
 # testing
-/coverage
+coverage/
 
 # production
-/build
+dist/
 
 # temporary and local development files
-temp/
 dev/
 .vscode/
