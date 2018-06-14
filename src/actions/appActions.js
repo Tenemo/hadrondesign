@@ -6,4 +6,3 @@ export function changeTheme(theme) {
         theme
     };
 }
-

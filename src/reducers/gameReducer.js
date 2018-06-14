@@ -7,7 +7,6 @@ export default function gameReducer(state = initialState.game, action) {
     let newState;
     switch (action.type) {
         case types.NEW_GAME_SUCCESS:
-            //console.log('NEW_GAME_SUCCESS REDUCER');
             newState = objectAssign({}, state);
             newState.board = action.newGame.board;
             newState.receivedBoard = JSON.parse(JSON.stringify(newState.board));
@@ -23,7 +22,6 @@ export default function gameReducer(state = initialState.game, action) {
                 }
             }
             newState.firstTime = false;
-            newState.isDisabled = false;
             return newState;
         case types.MAKE_MOVE:
             newState = objectAssign({}, state);
@@ -48,7 +46,6 @@ export default function gameReducer(state = initialState.game, action) {
             newState.moves = [];
             newState.moveCount = 0;
             newState.gameId = '';
-            newState.isDisabled = true;
             return newState;
         case types.UPDATE_ON_CHANGE:
             newState = objectAssign({}, state);
@@ -60,7 +57,6 @@ export default function gameReducer(state = initialState.game, action) {
             return newState;
         case types.RESTART_BOARD:
             newState = objectAssign({}, state);
-            newState.isDisabled = false;
             newState.board = JSON.parse(JSON.stringify(newState.receivedBoard));
             newState.moves = [];
             newState.moveCount = 0;
@@ -71,6 +67,14 @@ export default function gameReducer(state = initialState.game, action) {
                         newState.leftCount++;
                 }
             }
+            return newState;
+        case types.LOCK_BOARD:
+            newState = objectAssign({}, state);
+            newState.isDisabled = true;
+            return newState;
+        case types.UNLOCK_BOARD:
+            newState = objectAssign({}, state);
+            newState.isDisabled = false;
             return newState;
         default:
             return state;

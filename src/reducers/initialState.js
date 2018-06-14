@@ -8,7 +8,8 @@ for (let i = 0; i < defaultSize; i++) {
 }
 export default {
     app: {
-        theme: 'theme-light'
+        theme: 'theme-light',
+        darkTheme: false
     },
     game: {
         board: defaultBoard,

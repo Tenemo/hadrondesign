@@ -34,12 +34,15 @@ $flippedTile: $secondary;
     overflow-x: auto;
     table {
         width: 100%;
-        td {
-            padding: 3px;
-            padding-right: 8px;
+        thead > tr {
+            border-bottom: 2px $primary solid;
         }
         tr {
             border-top: 1px $secondary solid;
+        }
+        td {
+            padding: 3px;
+            padding-right: 8px;
         }
     }
 }
@@ -51,9 +54,10 @@ $flippedTile: $secondary;
     //margin: 0.2%;
     margin: 1px;
     @media (min-width: 576px) {
-        margin: 0.15%;
+        //margin: 0.15%;
+        font-size: 14px;
     }
-    perspective: 200px;
+    perspective: 500px;
     user-select: none;
     .front,
     .back {
@@ -66,10 +70,10 @@ $flippedTile: $secondary;
         position: absolute;
         top: 0;
         left: 0;
-        border-radius: 15%;
+        border-radius: 8%;
     }
     .tileInside {
-        padding-top: 100%; /* 1:1 Aspect Ratio */
+        padding-top: 100%; // 1:1 Aspect Ratio
         width: 100%;
         transition: 0.3s;
         transform-style: preserve-3d;
@@ -79,20 +83,27 @@ $flippedTile: $secondary;
         }
     }
     .front {
-        z-index: 2;
-        /* for firefox 31 */
         transform: rotateY(0deg);
         background-color: $activeTile;
     }
     .back {
         transform: rotateY(180deg);
         background-color: $flippedTile;
+        color: $flippedTile;
+        &:hover {
+            background-color: lighten($flippedTile, 20%);
+            color: darken($flippedTile, 20%);
+            cursor: pointer;
+        }
     }
     &.inactive {
         visibility: hidden;
     }
     &.disabled {
         pointer-events: none;
+        .tileInside {
+            transition: none !important;
+        }
     }
     &.coords {
         background-color: $primary-bg;
@@ -101,17 +112,6 @@ $flippedTile: $secondary;
         }
     }
     &.flipped {
-        .front,
-        .back {
-            background-color: $flippedTile;
-            color: $flippedTile;
-            &:hover {
-                background-color: darken($flippedTile, 10%);
-                color: lighten($flippedTile, 20%);
-                cursor: pointer;
-                font-weight: 300;
-            }
-        }
         .tileInside {
             transform: rotateY(180deg)
         }
@@ -121,9 +121,8 @@ $flippedTile: $secondary;
         .back {
             color: $activeTile;
             &:hover {
-                background-color: lighten($activeTile, 10%);
-                color: $primary-bg;
-                font-weight: 700;
+                background-color: darken($activeTile, 20%);
+                color: lighten($activeTile, 20%);
                 cursor: pointer;
             }
         }

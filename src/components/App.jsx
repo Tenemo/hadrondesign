@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as appActions from '../actions/appActions';
 import { Route, Switch, withRouter } from 'react-router-dom';
-import Header from './common/Header';
-import AboutPage from './about/AboutPage';
-import PortfolioPage from './portfolio/PortfolioPage';
-import GamePage from './game/GamePage';
 import ContactPage from './contact/ContactPage';
+import fontawesome from '@fortawesome/fontawesome';
+import brands from '@fortawesome/fontawesome-free-brands';
+import solid from '@fortawesome/fontawesome-free-solid';
+import regular from '@fortawesome/fontawesome-free-regular';
+fontawesome.library.add(brands, solid, regular); //eslint-disable-line import/no-named-as-default-member
 import toastr from 'toastr';
 toastr.options = {
     closeButton: true,
@@ -17,23 +18,34 @@ toastr.options = {
     extendedTimeOut: 0,
     positionClass: 'toast-top-left'
 };
+import Header from './common/Header';
+import AboutPage from './about/AboutPage';
+import PortfolioPage from './portfolio/PortfolioPage';
+import GamePage from './game/GamePage';
 
 export class App extends React.Component {
     constructor(props) {
         super(props);
         this.changeTheme = this.changeTheme.bind(this);
     }
+    componentDidMount() {
+        document.body.className = this.props.app.theme;
+    }
     changeTheme = (event) => {
         if (event.target.checked) {
-            this.props.actions.changeTheme('theme-dark');
+            Promise.resolve(this.props.actions.changeTheme('theme-dark')).then(() => {
+                document.body.className = this.props.app.theme;
+            });
         } else {
-            this.props.actions.changeTheme('theme-light');
+            Promise.resolve(this.props.actions.changeTheme('theme-light')).then(() => {
+                document.body.className = this.props.app.theme;
+            });
         }
     }
     render() {
         return (
-            <div className={this.props.theme}>
-                <Header loading={this.props.loading} changeTheme={this.changeTheme}/>
+            <div>
+                <Header loading={this.props.loading} changeTheme={this.changeTheme} darkTheme={this.props.app.darkTheme} />
                 <div className="container-fluid main-container">
                     <Switch>
                         <Route exact path="/" component={AboutPage} />
@@ -48,14 +60,14 @@ export class App extends React.Component {
 }
 
 App.propTypes = {
-    theme: PropTypes.string.isRequired,
+    app: PropTypes.object,
     actions: PropTypes.object.isRequired,
     loading: PropTypes.bool
 };
 
 function mapStateToProps(state) {
     return {
-        theme: state.app.theme,
+        app: state.app,
         loading: state.ajaxCallsInProgress > 0
     };
 }

@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 const HighScores = ({ highScores }) => {
     return (
         <div className="highScores">
-            <h4>High Scores:</h4>
+            <h4><FontAwesomeIcon icon="trophy"/> High Scores:</h4>
             <table>
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th><FontAwesomeIcon icon="hashtag"/></th>
                         <th>Score</th>
                         <th>Size</th>
                         <th>Moves</th>

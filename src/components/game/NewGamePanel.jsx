@@ -29,14 +29,14 @@ const NewGamePanel = ({ game, onNewGameClick, onChange, onRestartClick, loading 
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="playerName">If you want to appear in the scoreboard, type in your player name: </label>
+                    <label htmlFor="playerName">Player name to show on scoreboard:</label>
                     <input
                         className="form-control"
                         onChange={onChange}
                         value={game.playerName}
                         type="text"
                         name="playerName"
-                        placeholder="myPlayerName"
+                        placeholder="anonymous"
                         maxLength="32"
                         />
                 </div>
@@ -55,9 +55,10 @@ const NewGamePanel = ({ game, onNewGameClick, onChange, onRestartClick, loading 
                         <input
                             className="form-check-input"
                             onChange={onChange}
-                            value={game.easyMode}
+                            checked={game.easyMode}
                             type="checkbox"
-                            name="easyMode" />
+                            name="easyMode"
+                            id="easyMode" />
                         <label htmlFor="easyMode" className="form-check-label">Easy Mode - disables score</label>
                     </div>
                 </div>

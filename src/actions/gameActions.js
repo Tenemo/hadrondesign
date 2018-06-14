@@ -7,6 +7,7 @@ const api = 'http://leczna.online:8080';
 
 export function newGame(newSize, easyMode, seed, previousId) {
     return dispatch => {
+        dispatch(lockBoard());
         dispatch(beginAjaxCall());
         return fetch(api + '/api/game/new', {
             timeout: 5000,
@@ -36,6 +37,10 @@ export function newGame(newSize, easyMode, seed, previousId) {
                     preventDuplicates: true
                 });
                 dispatch(newGameSuccess(newGame));
+                // to wait for DOM a little bit and prevent flip animation
+                setTimeout(() => {
+                    dispatch(unlockBoard());
+                }, 20);
             })
             .catch(err => {
                 toastr.error('Couldn\'t load a new game 😥 \n' + err);
@@ -49,6 +54,18 @@ export function newGameSuccess(newGame) {
     return {
         type: types.NEW_GAME_SUCCESS,
         newGame
+    };
+}
+
+export function unlockBoard() {
+    return {
+        type: types.UNLOCK_BOARD
+    };
+}
+
+export function lockBoard() {
+    return {
+        type: types.LOCK_BOARD
     };
 }
 
@@ -71,7 +88,10 @@ export function winGame(game) {
             },
             body: JSON.stringify({
                 'moves': game.moves,
-                'playerName': game.playerName
+                'playerName': (() => {
+                    if (!game.playerName) return 'anonymous';
+                    return game.playerName;
+                })()
             })
         })
             .then(res => {
@@ -91,6 +111,7 @@ export function winGame(game) {
                         timeOut: 2000,
                         extendedTimeOut: 0
                 });
+                dispatch(lockBoard());
                 dispatch(winGameSuccess(game));
             })
             .then(game => {
@@ -105,7 +126,6 @@ export function winGame(game) {
 }
 
 export function winGameSuccess(game) {
-    //console.log('winGameSuccess() action');
     return {
         type: types.WIN_GAME_SUCCESS,
         game

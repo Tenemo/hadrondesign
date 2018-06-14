@@ -1,9 +1,11 @@
 @import 'fonts';
+@import 'vendor';
 @import '../components/common/header';
 @import '../components/game/game';
 
 .main-container {
     padding-top: 80px;
+    height: 100vh;
 }
 
 .jumbotron {
@@ -32,14 +34,14 @@ a {
     }
 }
 
+::selection {
+    color: white;
+    background: $primary;
+}
+
 #toast-container {
     .toast {
         box-shadow: none;
         opacity: 0.9;
     }
-}
-
-::selection {
-    color: white;
-    background: $primary;
 }

@@ -7,7 +7,6 @@
     $secondary: rgb(50, 50, 50);
     $primary-bg: $dark;
     $active: lighten($primary, 20%);
-    @import 'vendor';
     @import 'global';
     background-color: $primary-bg;
     font-family: $primary-font;
@@ -18,12 +17,11 @@
     $light: #ffebcd;
     $dark: #1E1E1E;
 
-    $primary: rgb(87, 87, 87);
+    $primary: rgb(71, 71, 71);
     $primary-string: "rgb(87, 87, 87)"; //bootstrap4's hamburger
-    $secondary: rgb(177, 177, 177);
+    $secondary: rgb(199, 199, 199);
     $primary-bg: $light;
     $active: lighten($primary, 20%);
-    @import 'vendor';
     @import 'global';
     background-color: $primary-bg;
     font-family: $primary-font;

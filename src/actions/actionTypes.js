@@ -7,3 +7,5 @@ export const RESTART_BOARD = 'RESTART_BOARD';
 export const BEGIN_AJAX_CALL = 'BEGIN_AJAX_CALL';
 export const AJAX_CALL_ERROR = 'AJAX_CALL_ERROR';
 export const CHANGE_THEME = 'CHANGE_THEME';
+export const LOCK_BOARD = 'LOCK_BOARD';
+export const UNLOCK_BOARD = 'UNLOCK_BOARD ';

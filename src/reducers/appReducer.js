@@ -8,6 +8,11 @@ export default function gameReducer(state = initialState.app, action) {
         case types.CHANGE_THEME:
             newState = objectAssign({}, state);
             newState.theme = action.theme;
+            if (action.theme === 'theme-dark') {
+                newState.darkTheme = true;
+            } else {
+                newState.darkTheme = false;
+            }
             return newState;
         default:
             return state;
