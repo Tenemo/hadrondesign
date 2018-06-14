@@ -5,6 +5,7 @@
 - webpack doesnt copy .svg to dist nor it embeds them, despite seemingly correct config, silly me or silly webpack
 - add site manifest, pretty select colors and stuff
 - navbar disappear after click on mobile
+- dark theme switch
 
 ### for later
 - testing client/server
@@ -15,4 +16,5 @@
 - clear out unused packages
 - reduce bundle.js size: import only part of bootstrap? drop polyfills?
 - client-side form validation instead of server errors
-- option to show more high scores, show highlighted row with last game played to see where the user placed 
+- option to show more high scores, show highlighted row with last game played to see where the user placed
+- add htmlFor's

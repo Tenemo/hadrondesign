@@ -7,6 +7,9 @@ for (let i = 0; i < defaultSize; i++) {
     }
 }
 export default {
+    app: {
+        theme: 'theme-light'
+    },
     game: {
         board: defaultBoard,
         receivedBoard: [],
@@ -21,6 +24,7 @@ export default {
         easyMode: false,
         highScores: [],
         isDisabled: true,
+        firstTime: true,
         previous: {
             size: null,
             seed: '',

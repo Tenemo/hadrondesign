@@ -1,6 +1,5 @@
-@import '../../styles/variables';
-// .gamePage {
-// }
+$activeTile: $primary;
+$flippedTile: $secondary;
 
 .board {
     .boardRow {
@@ -52,7 +51,7 @@
     //margin: 0.2%;
     margin: 1px;
     @media (min-width: 576px) {
-        margin: 0.13%;
+        margin: 0.15%;
     }
     perspective: 200px;
     user-select: none;

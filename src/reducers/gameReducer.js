@@ -22,6 +22,7 @@ export default function gameReducer(state = initialState.game, action) {
                         newState.leftCount++;
                 }
             }
+            newState.firstTime = false;
             newState.isDisabled = false;
             return newState;
         case types.MAKE_MOVE:

@@ -1,13 +1,9 @@
-@import 'variables';
-@import 'vendor';
-body {
-    background-color: $primary-bg;
-    font-family: $primary-font;
-    color: $primary;
-}
+@import 'fonts';
+@import '../components/common/header';
+@import '../components/game/game';
 
 .main-container {
-    margin-top: 70px;
+    padding-top: 80px;
 }
 
 .jumbotron {

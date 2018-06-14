@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as gameActions from '../../actions/gameActions';
-import './game.scss';
 import Board from './GameBoard';
 import NewGamePanel from './NewGamePanel';
 import HighScores from './HighScores';
@@ -11,8 +10,8 @@ import InfoPanels from './InfoPanels';
 import Tile from './Tile';
 
 export class GamePage extends React.Component {
-    constructor(props, context) {
-        super(props, context);
+    constructor(props) {
+        super(props);
         this.onMoveClick = this.onMoveClick.bind(this);
         this.onNewGameClick = this.onNewGameClick.bind(this);
         this.updateGameState = this.updateGameState.bind(this);
@@ -57,7 +56,7 @@ export class GamePage extends React.Component {
                     </div>
                     <div className="col-sm-5 col-md-4 col-lg-3">
                         <div className="exampleBox">
-                            {!this.props.game.gameId && <React.Fragment>
+                            {this.props.game.firstTime && <React.Fragment>
                                 <p>Game objective: <span className="boldTip">flip every tile to the light gray side.</span> Score is based on board size, time spent and amount of moves. Every single board is guaranteed to be solvable.</p>
                                 <div className="example">
                                     <Tile type={1} coords={[3, 0]} size={8} isDisabled />

@@ -1,12 +1,11 @@
 import 'babel-polyfill';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import './styles/global.scss';
+import '../node_modules/toastr/build/toastr.min.css';
+import './styles/themes.scss';
 import { render } from 'react-dom';
 import configureStore, { history } from './store/configureStore';
 import { AppContainer } from 'react-hot-loader';
 import Root from './components/Root';
-//import './styles/bootstrapOverride.scss';
-//import 'bootstrap/scss/bootstrap.scss';
 import {getHighScores} from './actions/gameActions';
 const store = configureStore();
 store.dispatch(getHighScores());
