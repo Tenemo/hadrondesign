@@ -14,7 +14,12 @@ export default {
         extensions: ['*', '.js', '.jsx', '.json']
     },
     devtool: 'source-map',
-    entry: path.resolve(__dirname, '../src/index.jsx'),
+    entry: [
+        'babel-polyfill',
+        'react',
+        'react-dom',
+        path.resolve(__dirname, '../src/index.jsx')
+    ],
     target: 'web',
     mode: 'production',
     output: {

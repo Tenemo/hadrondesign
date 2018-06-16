@@ -6,10 +6,8 @@ import * as appActions from '../actions/appActions';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import ContactPage from './contact/ContactPage';
 import fontawesome from '@fortawesome/fontawesome';
-import brands from '@fortawesome/fontawesome-free-brands';
-import solid from '@fortawesome/fontawesome-free-solid';
-import regular from '@fortawesome/fontawesome-free-regular';
-fontawesome.library.add(brands, solid, regular); //eslint-disable-line import/no-named-as-default-member
+import { faMoon, faTrophy, faArrowRight } from '@fortawesome/fontawesome-free-solid';
+fontawesome.library.add(faMoon, faTrophy, faArrowRight); //eslint-disable-line import/no-named-as-default-member
 import toastr from 'toastr';
 toastr.options = {
     closeButton: true,
@@ -29,6 +27,7 @@ export class App extends React.Component {
         this.changeTheme = this.changeTheme.bind(this);
     }
     componentDidMount() {
+
         document.body.className = this.props.app.theme;
     }
     changeTheme = (event) => {

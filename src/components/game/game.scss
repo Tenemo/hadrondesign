@@ -1,6 +1,5 @@
 $activeTile: $primary;
 $flippedTile: $secondary;
-
 .board {
     .boardRow {
         display: flex;
@@ -30,11 +29,12 @@ $flippedTile: $secondary;
         overflow-y: auto;
     }
 }
+
 .highScores {
     overflow-x: auto;
     table {
         width: 100%;
-        thead > tr {
+        thead>tr {
             border-bottom: 2px $primary solid;
         }
         tr {
@@ -50,15 +50,23 @@ $flippedTile: $secondary;
 .tile {
     font-size: 2vh;
     max-width: 50px;
-    width: 100%;
-    //margin: 0.2%;
+    width: 100%; //margin: 0.2%;
     margin: 1px;
+    font-size: 14px;
     @media (min-width: 576px) {
         //margin: 0.15%;
-        font-size: 14px;
     }
-    perspective: 500px;
+    perspective: 1000px;
     user-select: none;
+    .tileInside {
+        padding-top: 100%;
+        width: 100%;
+        transition: 0.25s;
+        transform-style: preserve-3d;
+        position: relative;
+        border-radius: 5%;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    }
     .front,
     .back {
         display: flex;
@@ -66,65 +74,72 @@ $flippedTile: $secondary;
         width: 100%;
         align-items: center;
         justify-content: center;
-        backface-visibility: hidden;
         position: absolute;
         top: 0;
         left: 0;
-        border-radius: 8%;
-    }
-    .tileInside {
-        padding-top: 100%; // 1:1 Aspect Ratio
-        width: 100%;
-        transition: 0.3s;
-        transform-style: preserve-3d;
-        position: relative;
-        > span {
-            pointer-events: none
+        backface-visibility: hidden;
+        >span {
+            pointer-events: none;
         }
     }
     .front {
+        //z-index: 2;
         transform: rotateY(0deg);
-        background-color: $activeTile;
+        //background-color: $activeTile;
     }
     .back {
         transform: rotateY(180deg);
-        background-color: $flippedTile;
-        color: $flippedTile;
-        &:hover {
-            background-color: lighten($flippedTile, 20%);
-            color: darken($flippedTile, 20%);
+        //background-color: $flippedTile;
+    }
+    &.active {
+        .tileInside {
+            background-color: $activeTile;
+            color: $activeTile;
             cursor: pointer;
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+            @media (hover: hover) {
+                &:hover {
+                    background-color: lighten($activeTile, 20%);
+                    color: $flippedTile;
+                }
+            }
+        }
+    }
+    &.flipped {
+        .tileInside {
+            transform: rotateY(180deg);
+            background-color: $flippedTile;
+            color: $flippedTile;
+            cursor: pointer;
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+            @media (hover: hover) {
+                &:hover {
+                    background-color: lighten($flippedTile, 20%);
+                    color: $activeTile;
+                }
+            }
         }
     }
     &.inactive {
         visibility: hidden;
     }
     &.disabled {
-        pointer-events: none;
         .tileInside {
             transition: none !important;
         }
     }
     &.coords {
-        background-color: $primary-bg;
         .front {
-            background-color: $primary-bg;
+            background-color: none;
         }
-    }
-    &.flipped {
-        .tileInside {
-            transform: rotateY(180deg)
-        }
-    }
-    &.active {
-        .front,
         .back {
-            color: $activeTile;
-            &:hover {
-                background-color: darken($activeTile, 20%);
-                color: lighten($activeTile, 20%);
-                cursor: pointer;
-            }
+            visibility: hidden;
         }
     }
 }

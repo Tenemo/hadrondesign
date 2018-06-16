@@ -2,8 +2,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { numToAlpha } from '../../helpers/helpers';
 
-const Tile = ({type, coords, size, onMoveClick, isDisabled}) => {
-    //console.log(onMoveClick);
+const Tile = ({ type, coords, size, onMoveClick, isDisabled }) => {
     let tileClass = classNames({
         tile: true,
         'coords d-none d-sm-block': type === 3 || type === 4,
@@ -11,16 +10,16 @@ const Tile = ({type, coords, size, onMoveClick, isDisabled}) => {
         'active': type === 1,
         'flipped': type === 0,
         'disabled': isDisabled
-      });
+    });
     coords = numToAlpha(coords, size, type);
     return (
         <div className={tileClass}>
             <div className="tileInside">
                 <div className="front" coords={coords} onClick={onMoveClick}>
-                    <span className="d-none d-sm-block" coords={coords}>{coords}</span>
+                    <span className="coords d-none d-sm-block">{coords}</span>
                 </div>
                 <div className="back" coords={coords} onClick={onMoveClick}>
-                    <span className="d-none d-sm-block" coords={coords}>{coords}</span>
+                    <span className="coords d-none d-sm-block">{coords}</span>
                 </div>
             </div>
         </div>

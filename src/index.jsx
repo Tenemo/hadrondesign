@@ -1,4 +1,7 @@
-import 'babel-polyfill';
+//import 'babel-polyfill';
+//import 'eventsource-polyfill';
+require('../node_modules/es6-promise').polyfill();
+require('fetch-everywhere');
 import 'bootstrap/dist/js/bootstrap.min.js';
 import './styles/themes.scss';
 import { render } from 'react-dom';
@@ -10,7 +13,15 @@ import { persistStore } from 'redux-persist';
 const store = configureStore();
 let persistor = persistStore(store);
 store.dispatch(getHighScores());
-
+Math.trunc = Math.trunc || function (x) {
+    if (isNaN(x)) {
+        return NaN;
+    }
+    if (x > 0) {
+        return Math.floor(x);
+    }
+    return Math.ceil(x);
+};
 render(
     (
         <AppContainer>

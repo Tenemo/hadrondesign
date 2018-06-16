@@ -9,6 +9,7 @@ import thunk from 'redux-thunk';
 const persistConfig = {
     key: 'root',
     storage,
+    blacklist: ['ajaxCallsInProgress']
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 export const history = createHistory();

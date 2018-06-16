@@ -28,9 +28,10 @@ a {
 
 .btn {
     margin: 3px;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     &:focus {
-        outline:none;
-        box-shadow:none;
+        outline: none;
+        box-shadow: none;
     }
 }
 

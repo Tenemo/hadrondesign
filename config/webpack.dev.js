@@ -9,9 +9,12 @@ export default {
     },
     devtool: 'cheap-module-source-map',
     entry: [
-        'eventsource-polyfill', // necessary for hot reloading with IE
+        'babel-polyfill',
+        //'eventsource-polyfill', // necessary for hot reloading with IE
         'react-hot-loader/patch',
         'webpack-hot-middleware/client',
+        'react', // Include this to enforce order
+        'react-dom', // Include this to enforce order
         // 'webpack-hot-middleware/client?reload=true',
         path.resolve(__dirname, '../src/index.jsx')
     ],

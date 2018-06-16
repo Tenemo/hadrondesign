@@ -1,5 +1,4 @@
 import * as types from './actionTypes';
-import fetch from 'node-fetch';
 import { beginAjaxCall, ajaxCallError } from './ajaxStatusActions';
 import toastr from 'toastr';
 

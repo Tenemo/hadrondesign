@@ -35,7 +35,7 @@ export class GamePage extends React.Component {
             this.props.game.easyMode,
             this.props.game.seed,
             this.props.game.gameId
-        )
+        );
     }
     updateGameState = event => {
         const name = event.target.name;
@@ -59,13 +59,13 @@ export class GamePage extends React.Component {
                         <div className="exampleBox">
                             {this.props.game.firstTime && <React.Fragment>
                                 <p>Game objective: <span className="boldTip">flip every tile to the gray side.</span> Score is based on board size, time spent and amount of moves. Every single board is guaranteed to be solvable.</p>
-                                <p className="example">
+                                <div className="example">
                                     <Tile type={1} coords={[3, 0]} size={8} isDisabled />
                                     &nbsp;
                                     <FontAwesomeIcon icon="arrow-right" />
                                     &nbsp;
                                     <Tile type={0} coords={[3, 0]} size={8} isDisabled />
-                                </p>
+                                </div>
                                 <p className="boldTip">Start a new game to begin.</p>
                             </React.Fragment>}
                         </div>
