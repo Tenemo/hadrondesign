@@ -50,7 +50,7 @@ export class GamePage extends React.Component {
 
     render() {
         return (
-            <div className="gamePage">
+            <section className="gamePage">
                 <div className="row">
                     <div className="col-sm-7 col-md-8 col-lg-9">
                         <Board game={this.props.game} onMoveClick={this.onMoveClick} />
@@ -88,7 +88,7 @@ export class GamePage extends React.Component {
                         <HighScores highScores={this.props.game.highScores} />
                     </div>
                 </div>
-            </div>
+            </section>
         );
     }
 }

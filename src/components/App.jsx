@@ -6,8 +6,19 @@ import * as appActions from '../actions/appActions';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import ContactPage from './contact/ContactPage';
 import fontawesome from '@fortawesome/fontawesome';
-import { faMoon, faTrophy, faArrowRight } from '@fortawesome/fontawesome-free-solid';
-fontawesome.library.add(faMoon, faTrophy, faArrowRight); //eslint-disable-line import/no-named-as-default-member
+import { faEnvelope, faBuilding } from '@fortawesome/fontawesome-free-regular';
+import { faMoon, faTrophy, faArrowRight, faUniversity } from '@fortawesome/fontawesome-free-solid';
+import { faGithub, faLinkedin } from '@fortawesome/fontawesome-free-brands';
+fontawesome.library.add( //eslint-disable-line import/no-named-as-default-member
+    faMoon,
+    faTrophy,
+    faArrowRight,
+    faEnvelope,
+    faGithub,
+    faLinkedin,
+    faBuilding,
+    faUniversity
+);
 import toastr from 'toastr';
 toastr.options = {
     closeButton: true,

@@ -1,19 +1,18 @@
 .loadingDots {
-    //background-color: transparentize(lighten($primary-bg, 20%), 0.6);
+    background-color: transparentize(lighten($primary-bg, 10%), 0.5);
+    z-index: 3;
     margin-top: 80px;
     padding-left: 20px;
 }
 
-.navbar-toggler {
-    border-color: $primary;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='" + $primary-string + "' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
-
 .navbar {
     background-color: $primary-bg;
+    .navbar-toggler {
+        border-color: $primary;
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='" + $primary-string + "' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
 }
 
 .darkModeSwitch {

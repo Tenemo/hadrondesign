@@ -6,8 +6,10 @@
     $primary-string: "rgb(246, 159, 29)"; //bootstrap4's hamburger
     $secondary: rgb(50, 50, 50);
     $primary-bg: $dark;
-    $active: lighten($primary, 20%);
+    $links: lighten($primary, 15%);
+    $active: darken($primary, 15%);
     @import 'global';
+    // body rules
     background-color: $primary-bg;
     font-family: $primary-font;
     color: $primary;
@@ -21,8 +23,10 @@
     $primary-string: "rgb(87, 87, 87)"; //bootstrap4's hamburger
     $secondary: rgb(199, 199, 199);
     $primary-bg: $light;
-    $active: lighten($primary, 20%);
+    $links: lighten($primary, 15%);
+    $active: darken($primary, 15%);
     @import 'global';
+    // body rules
     background-color: $primary-bg;
     font-family: $primary-font;
     color: $primary;

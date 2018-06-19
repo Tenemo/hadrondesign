@@ -1,9 +1,10 @@
 @import 'fonts';
 @import 'vendor';
 @import '../components/common/header';
-@import '../components/game/game';
 @import '../components/about/about';
 @import '../components/portfolio/portfolio';
+@import '../components/game/game';
+@import '../components/contact/contact';
 
 .main-container {
     padding-top: 80px;
@@ -15,6 +16,7 @@
 }
 
 a {
+    color: $links;
     &.active {
         color: $active;
     }

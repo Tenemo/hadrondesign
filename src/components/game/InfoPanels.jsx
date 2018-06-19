@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 const Panel = ({ game }) => {
     return (
         <div className="panel">
