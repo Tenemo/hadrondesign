@@ -16,22 +16,22 @@ const Header = ({ loading, changeTheme, darkTheme }) => {
                 </button>
                 <div className="collapse navbar-collapse" id="headerNavbar">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                             <NavLink exact to="/" className="nav-link">
                                 About
                             </NavLink>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                             <NavLink to="/portfolio" className="nav-link">
                                 Portfolio
                             </NavLink>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                             <NavLink to="/game" className="nav-link">
                                 Game
                             </NavLink>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                             <NavLink to="/contact" className="nav-link">
                                 Contact
                             </NavLink>

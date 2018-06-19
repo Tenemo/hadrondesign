@@ -13,6 +13,8 @@ import { persistStore } from 'redux-persist';
 const store = configureStore();
 let persistor = persistStore(store);
 store.dispatch(getHighScores());
+
+// global trunc polyfill for IE11
 Math.trunc = Math.trunc || function (x) {
     if (isNaN(x)) {
         return NaN;
@@ -22,6 +24,7 @@ Math.trunc = Math.trunc || function (x) {
     }
     return Math.ceil(x);
 };
+
 render(
     (
         <AppContainer>

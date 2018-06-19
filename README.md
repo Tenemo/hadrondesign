@@ -4,8 +4,8 @@
 ### now
 - webpack doesnt copy .svg to dist nor it embeds them, despite seemingly correct config, silly me or silly webpack
 - add site manifest, theme color etc 
-- navbar disappear after click on mobile
 - fontawesome BLOAT
+- hamburger after click border
 
 ### for later
 - testing client/server
