@@ -2,10 +2,223 @@
 
 exports[`ContactPage matches snapshot 1`] = `
 <section
-  className="contact"
+  className="contactPage"
 >
-  <h2>
-    piotr@hadron.design
-  </h2>
+  <div
+    className="row"
+  >
+    <div
+      className="col-sm-12 my-3 text-center"
+    >
+      <h5>
+        <a
+          href="https://www.linkedin.com/in/ppiech/"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Array [
+                "fab",
+                "linkedin",
+              ]
+            }
+            listItem={false}
+            mask={null}
+            name=""
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            transform={null}
+          />
+           /ppiech
+        </a>
+      </h5>
+      <h5>
+        <a
+          href="https://github.com/Tenemo"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Array [
+                "fab",
+                "github",
+              ]
+            }
+            listItem={false}
+            mask={null}
+            name=""
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            transform={null}
+          />
+           /Tenemo
+        </a>
+      </h5>
+      <h5>
+        <a
+          href="mailto:piotr@hadron.design"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Array [
+                "far",
+                "envelope",
+              ]
+            }
+            listItem={false}
+            mask={null}
+            name=""
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            transform={null}
+          />
+           piotr@hadron.design
+        </a>
+      </h5>
+    </div>
+    <div
+      className="col-sm-12 my-3"
+    >
+      <h5
+        className="text-center"
+      >
+        <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Array [
+              "far",
+              "building",
+            ]
+          }
+          listItem={false}
+          mask={null}
+          name=""
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          transform={null}
+        />
+         Company Info
+      </h5>
+      <hr />
+      <p>
+        <span
+          className="font-weight-bold"
+        >
+          Hadron Design Piotr Piech 
+          <br />
+          <br />
+        </span>
+        ul. Gwarków 4/21, 21-010 Łęczna, Poland 
+        <br />
+        <br />
+        NIP [EU VAT ID]: PL5050125887 
+        <br />
+        <br />
+        <a
+          href="mailto:piotr@hadron.design"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Array [
+                "far",
+                "envelope",
+              ]
+            }
+            listItem={false}
+            mask={null}
+            name=""
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            symbol={false}
+            transform={null}
+          />
+           kontakt@hadron.design 
+          <br />
+          <br />
+        </a>
+      </p>
+      <h5
+        className="text-center"
+      >
+        <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
+            Array [
+              "fas",
+              "university",
+            ]
+          }
+          listItem={false}
+          mask={null}
+          name=""
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          transform={null}
+        />
+         Bank Transfer Details
+      </h5>
+      <hr />
+      <p>
+        IBAN: PL75 1140 2004 0000 3202 7619 2059 
+        <br />
+        <br />
+        BIC/SWIFT: BREXPLPWMBK 
+        <br />
+        <br />
+        SORT CODE: 11402004  
+        <br />
+        <br />
+        Bank name: mBank S.A. FORMERLY BRE BANK S.A. (RETAIL BANKING) LODZ  
+        <br />
+        <br />
+        Bank address: Skrytka pocztowa 2108, 90-959 Łódź 2 
+        <br />
+        <br />
+      </p>
+    </div>
+  </div>
 </section>
 `;

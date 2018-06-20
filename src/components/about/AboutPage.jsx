@@ -6,8 +6,8 @@ const AboutPage = () => {
         <section className="aboutPage">
             <div className="row text-center splash">
                 <div className="col-sm-12">
-                    <h2>I develop websites, translate, create graphics.</h2>
-                    <h6>No fancy sliders, my resume is right below.</h6>
+                    <h2>I develop websites, create graphics, translate.</h2>
+                    <h6>No fancy sliders, my resume is right below. However, please do visit my <Link to="/portfolio">Portfolio</Link> for details about projects I have shared - some of them with complete codebase available publicly.</h6>
                 </div>
             </div>
             <div className="row text-center">
@@ -40,7 +40,7 @@ const AboutPage = () => {
                             Apache, .htaccess
                         </li>
                         <li>
-                            buying, installing SSL certs, redirecting all traffic to HTTPS
+                            Buying, installing SSL certs, redirecting all traffic to HTTPS
                         </li>
                         <li>
                             WampServer as staging environment
@@ -100,7 +100,7 @@ const AboutPage = () => {
                             Brand design: creating logos, choosing color schemes
                         </li>
                         <li>
-                            Typography: posters, brochures, leaflets, billboards,
+                            Typography
                         </li>
                         <li>
                             Adobe Illustrator
@@ -109,7 +109,7 @@ const AboutPage = () => {
                             Adobe Photoshop + Lazy Nezumi Pro
                         </li>
                         <li>
-                            Adobe InDesign, limited experience, unless it&#39;s a 10+ page brochure, I&#39;ll go with Illustrator every time
+                            Adobe InDesign, limited experience, unless it&#39;s a 10+ page booklet, I&#39;ll go with Illustrator every time
                         </li>
                         <li>
                             Google Sketchup + LayOut, rendering with V-Ray for SketchUp
@@ -126,10 +126,13 @@ const AboutPage = () => {
                     <hr />
                     <ul className="dashed">
                         <li>
+                            Testing with Jest
+                        </li>
+                        <li>
                             Webpack + Sass/Less, Pug
                         </li>
                         <li>
-                            gulp.js + Sass/Less, Pug
+                            Gulp.js + Sass/Less, Pug
                         </li>
                         <li>
                             Browsersync + hot-reloading with both gulp.js & Webpack
@@ -159,7 +162,7 @@ const AboutPage = () => {
                             <a href="https://github.com/jcbvm/i18n-editor">i18n-editor</a> for dealing with translation files
                         </li>
                         <li>
-                            PowerShell, local scripting, automating work environent setup: launching dev-servers, multiple VSC windows, HeidiSQL, opening folders etc. (&quot;Hey Cortana, launch Project Portfolio.&quot;)
+                            PowerShell, local scripting, automating work environent setup: launching dev-servers, multiple VSC windows, HeidiSQL, opening folders etc. Also: &quot;Hey Cortana, launch Project Portfolio.&quot;
                         </li>
                         <li>
                             VeraCrypt 1.22 for responsible handling of sensitive data
@@ -184,7 +187,7 @@ const AboutPage = () => {
                             Full professional proficiency in Russian, especially spoken; Polish native speaker
                         </li>
                         <li>
-                            Google Sheets, advanced JS scripting in multi-sheet spreadsheets; creating future application mock-ups to establish desired functionality with the customer; writing scripts to be run in real-time for visual data changes simulation
+                            Google Sheets, advanced JS scripting in multi-sheet spreadsheets; creating future application mock-ups to establish desired functionality with the customer; writing scripts to be run in real-time for visual data simulation
                         </li>
                         <li>
                             Profesionally preparing long texts for print or web publication in PDF format using MS Word, including two-column multi-language documents with aligned paragraphs and translator comments
@@ -196,13 +199,13 @@ const AboutPage = () => {
                             Python, a couple of read/write scripts for automation here and there, familiar with the language
                         </li>
                         <li>
-                            Shooting regular films and time-lapses with GoPro, after postprocessing, uploading to YouTube
+                            Shooting regular films and time-lapses, uploading to YouTube after basic postprocessing
                         </li>
                         <li>
                             Decent hardware knowledge, ability to set up 2x 4 GPU crypto-currency mining rig on hand-made wooden racks in no time!
                         </li>
                         <li>
-                            B category driving license (EU)
+                            B category (EU) driving license
                         </li>
                     </ul>
                 </div>
@@ -210,11 +213,11 @@ const AboutPage = () => {
             <div className="row text-center mt-5">
                 <div className="col-sm-12">
                     <h4>Work Experience</h4>
-                    <h6>Please do visit my <Link to="/portfolio">Portfolio</Link> for details about my projects I have shared - some of them with complete codebase available publicly.</h6>
+                    <h6>Over 6 years of HTML, CSS, JavaScript & graphic design experience. Long history of successful product deliveries.</h6>
                     <hr />
                 </div>
             </div>
-            <div className="row my-5">
+            <div className="row mb-5">
                 <div className="col-sm-11 offset-sm-1 col-md-9 offset-md-1">
                     <div className="row">
                         <div className="col-sm-6">
@@ -263,7 +266,7 @@ const AboutPage = () => {
                             Designed newly acquired sawmill&#39;s logo, together with color scheme and business cards
                         </li>
                         <li>
-                            During business trips abroad and foreign customers visits interpreted talks to and from Russian, English, Polish
+                            During business trips abroad and foreign customers&#39; visits interpreted talks to and from Russian, English, Polish
                         </li>
                         <li>
                             Technical translations of biomass/woodworking industry texts, mostly Polish &lt;&gt; US English and from Russian, shorter texts to Russian
@@ -299,7 +302,7 @@ const AboutPage = () => {
                     <span className="font-italic">Freelance</span>
                     <ul className="dashed">
                         <li>
-                            Delivered webpages, complete with graphic design
+                            Delivered webpages, complete with brand graphic design
                         </li>
                         <li>
                             Designed and printed typography products

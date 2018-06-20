@@ -5,7 +5,7 @@
 - webpack doesnt copy .svg to dist nor it embeds them, despite seemingly correct config, silly me or silly webpack
 - add site manifest, theme color etc 
 - fontawesome BLOAT :c import only used icons they said, tree-shaking they said, it'll be okay they said
-- hamburger after click border
+- hamburger mobile after click border
 - how to play modal pop-up, GIF with example
 
 ### i18n

@@ -2,7 +2,7 @@
 
 exports[`PortfolioPage matches snapshot 1`] = `
 <section
-  className="portfolio"
+  className="portfolioPage"
 >
   <h2>
     Portfolio
