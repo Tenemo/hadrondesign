@@ -25,9 +25,19 @@ a {
     }
 }
 
+section {
+    margin-bottom: 100px;
+}
+
 .simpleBox {
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+hr {
+    border-color: $primary;
+    border-width: 2px;
+    max-width: 50%;
 }
 
 .btn {

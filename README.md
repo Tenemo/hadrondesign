@@ -6,6 +6,7 @@
 - add site manifest, theme color etc 
 - fontawesome BLOAT :c import only used icons they said, tree-shaking they said, it'll be okay they said
 - hamburger after click border
+- how to play modal pop-up, GIF with example
 
 ### i18n
 - i18next-react
@@ -26,3 +27,4 @@
 - special tiles? abilities, like to flip chosen tile?
 - if the site ever grows to have more scss, they should be imported separately for each section and themes handled differently
 - tune down score size-based scaling on bigger sizes?
+- add FAQ? a lot of questions get asked all the time

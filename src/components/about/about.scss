@@ -1,0 +1,18 @@
+.aboutPage {
+    .splash {
+        margin-bottom: 50px;
+        margin-top: 150px;
+    }
+    ul {
+        margin: 0;
+        &.dashed {
+            list-style-type: none;
+            >li {
+                margin-top: 12px;
+                &:before {
+                    content: "- ";
+                }
+            }
+        }
+    }
+}

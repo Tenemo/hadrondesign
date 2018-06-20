@@ -5,7 +5,7 @@ const ContactPage = () => {
     return (
         <section className="contactPage">
             <div className="row">
-                <div className="col-sm-12 my-3">
+                <div className="col-sm-12 my-3 text-center">
                     <h5>
                         <a href="https://www.linkedin.com/in/ppiech/">
                             <FontAwesomeIcon icon={['fab', 'linkedin']} /> /ppiech
@@ -23,9 +23,10 @@ const ContactPage = () => {
                     </h5>
                 </div>
                 <div className="col-sm-12 my-3">
-                    <h5>
+                    <h5 className="text-center">
                         <FontAwesomeIcon icon={['far', 'building']} /> Company Info
                     </h5>
+                    <hr />
                     <p>
                         <span className="font-weight-bold">
                             Hadron&nbsp;Design Piotr&nbsp;Piech <br /><br />
@@ -36,9 +37,10 @@ const ContactPage = () => {
                             <FontAwesomeIcon icon={['far', 'envelope']} /> kontakt@hadron.design <br /><br />
                         </a>
                     </p>
-                    <h5>
+                    <h5 className="text-center">
                         <FontAwesomeIcon icon={['fas', 'university']} /> Bank Transfer Details
                     </h5>
+                    <hr />
                     <p>
                         IBAN: PL75 1140&nbsp;2004 0000&nbsp;3202 7619&nbsp;2059 <br /><br />
                         BIC/SWIFT: BREXPLPWMBK <br /><br />
