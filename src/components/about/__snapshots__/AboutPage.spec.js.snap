@@ -2,7 +2,7 @@
 
 exports[`AboutPage matches snapshot 1`] = `
 <section
-  className="aboutPage"
+  className="aboutPage mx-3"
 >
   <div
     className="row text-center splash"
@@ -117,6 +117,9 @@ exports[`AboutPage matches snapshot 1`] = `
         <li>
           Localization with i18next, both server-rendered and client-side
         </li>
+        <li>
+          Wordpress
+        </li>
       </ul>
     </div>
   </div>
@@ -140,6 +143,9 @@ exports[`AboutPage matches snapshot 1`] = `
         </li>
         <li>
           Typography
+        </li>
+        <li>
+          Prepare photos for web display, i.e. downsize, fix contrast/brightness, resize/crop many photos at once
         </li>
         <li>
           Adobe Illustrator
@@ -263,7 +269,7 @@ exports[`AboutPage matches snapshot 1`] = `
           Shooting regular films and time-lapses, uploading to YouTube after basic postprocessing
         </li>
         <li>
-          Decent hardware knowledge, ability to set up 2x 4 GPU crypto-currency mining rig on hand-made wooden racks in no time!
+          Decent hardware knowledge, ability to set up crypto-currency mining rigs on custom-made racks in no time!
         </li>
         <li>
           B category (EU) driving license
@@ -287,7 +293,7 @@ exports[`AboutPage matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="row my-5"
+    className="row mb-5"
   >
     <div
       className="col-sm-11 offset-sm-1 col-md-9 offset-md-1"

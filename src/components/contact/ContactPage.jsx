@@ -3,7 +3,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 const ContactPage = () => {
     return (
-        <section className="contactPage">
+        <section className="contactPage mx-3">
             <div className="row">
                 <div className="col-sm-12 my-3 text-center">
                     <h5>
@@ -22,8 +22,10 @@ const ContactPage = () => {
                         </a>
                     </h5>
                 </div>
-                <div className="col-sm-12 my-3">
-                    <h5 className="text-center">
+            </div>
+            <div className="row my-3">
+                <div className="col-sm-9 offset-sm-1 col-md-7 offset-md-2">
+                    <h5>
                         <FontAwesomeIcon icon={['far', 'building']} /> Company Info
                     </h5>
                     <hr />
@@ -37,7 +39,7 @@ const ContactPage = () => {
                             <FontAwesomeIcon icon={['far', 'envelope']} /> kontakt@hadron.design <br /><br />
                         </a>
                     </p>
-                    <h5 className="text-center">
+                    <h5>
                         <FontAwesomeIcon icon={['fas', 'university']} /> Bank Transfer Details
                     </h5>
                     <hr />

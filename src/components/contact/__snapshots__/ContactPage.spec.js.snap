@@ -2,7 +2,7 @@
 
 exports[`ContactPage matches snapshot 1`] = `
 <section
-  className="contactPage"
+  className="contactPage mx-3"
 >
   <div
     className="row"
@@ -98,12 +98,14 @@ exports[`ContactPage matches snapshot 1`] = `
         </a>
       </h5>
     </div>
+  </div>
+  <div
+    className="row my-3"
+  >
     <div
-      className="col-sm-12 my-3"
+      className="col-sm-9 offset-sm-1 col-md-7 offset-md-2"
     >
-      <h5
-        className="text-center"
-      >
+      <h5>
         <FontAwesomeIcon
           border={false}
           className=""
@@ -173,9 +175,7 @@ exports[`ContactPage matches snapshot 1`] = `
           <br />
         </a>
       </p>
-      <h5
-        className="text-center"
-      >
+      <h5>
         <FontAwesomeIcon
           border={false}
           className=""

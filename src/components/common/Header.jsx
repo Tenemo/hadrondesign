@@ -9,7 +9,7 @@ const Header = ({ loading, changeTheme, darkTheme }) => {
         <React.Fragment>
             <nav className="navbar navbar-expand-sm fixed-top">
                 <Link to="/" className="navbar-brand">
-                    <img src="HD.svg" width="30" height="30" />
+                    <img src="../../static/HD.svg" width="30" height="30" />
                 </Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerNavbar" aria-controls="headerNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon" />

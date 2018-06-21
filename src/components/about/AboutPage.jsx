@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const AboutPage = () => {
     return (
-        <section className="aboutPage">
+        <section className="aboutPage mx-3">
             <div className="row text-center splash">
                 <div className="col-sm-12">
                     <h2>I develop websites, create graphics, translate.</h2>
@@ -80,6 +80,9 @@ const AboutPage = () => {
                         <li>
                             Localization with i18next, both server-rendered and client-side
                         </li>
+                        <li>
+                            Wordpress
+                        </li>
                         {/* <li>
                             D3.js, limited experience
                         </li>
@@ -101,6 +104,9 @@ const AboutPage = () => {
                         </li>
                         <li>
                             Typography
+                        </li>
+                        <li>
+                            Prepare photos for web display, i.e. downsize, fix contrast/brightness, resize/crop many photos at once
                         </li>
                         <li>
                             Adobe Illustrator
@@ -202,7 +208,7 @@ const AboutPage = () => {
                             Shooting regular films and time-lapses, uploading to YouTube after basic postprocessing
                         </li>
                         <li>
-                            Decent hardware knowledge, ability to set up 2x 4 GPU crypto-currency mining rig on hand-made wooden racks in no time!
+                            Decent hardware knowledge, ability to set up crypto-currency mining rigs on custom-made racks in no time!
                         </li>
                         <li>
                             B category (EU) driving license

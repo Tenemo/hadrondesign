@@ -48,7 +48,7 @@ export default {
             filename: 'index.html',
             inject: 'true',
             favicon: './src/favicon.ico'
-        }),
+        })
     ],
     module: {
         rules: [
@@ -90,7 +90,7 @@ export default {
                 ]
             },
             {
-                test: /\.(jpe?g|png|gif|ico)$/i,
+                test: /\.(jpe?g|png|gif|ico|mp4)$/i,
                 use: [
                     {
                         loader: 'file-loader',

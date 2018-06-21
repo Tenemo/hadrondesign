@@ -3,6 +3,7 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const GLOBALS = {
     'process.env.NODE_ENV': JSON.stringify('production'),
@@ -62,6 +63,10 @@ export default {
                 minifyURLs: true
             },
         }),
+        new CopyWebpackPlugin([
+            { from: path.resolve(__dirname, '../src/static/'), to: 'static' },
+            { from: path.resolve(__dirname, '../src/.htaccess') }
+        ])
     ],
     optimization: {
         splitChunks: {
@@ -114,7 +119,7 @@ export default {
                 ]
             },
             {
-                test: /\.(jpe?g|png|gif|ico)$/i,
+                test: /\.(jpe?g|png|gif|ico|mp4)$/i,
                 use: [
                     {
                         loader: 'file-loader',
@@ -132,9 +137,9 @@ export default {
                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 use: [
                     {
-                        loader: 'url-loader',
+                        loader: 'file-loader',
                         options: {
-                            limit: 10000,
+                            //limit: 10000,
                             mimetype: 'application/font-woff'
                         }
                     }
@@ -144,9 +149,9 @@ export default {
                 test: /\.[ot]tf(\?v=\d+.\d+.\d+)?$/,
                 use: [
                     {
-                        loader: 'url-loader',
+                        loader: 'file-loader',
                         options: {
-                            limit: 10000,
+                            //limit: 10000,
                             mimetype: 'application/octet-stream'
                         }
                     }
@@ -156,9 +161,9 @@ export default {
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
                 use: [
                     {
-                        loader: 'url-loader',
+                        loader: 'file-loader',
                         options: {
-                            limit: 10000,
+                            //limit: 10000,
                             mimetype: 'image/svg+xml'
                         }
                     }
