@@ -6,7 +6,7 @@
     $primary-string: "rgb(246, 159, 29)"; //bootstrap4's hamburger
     $secondary: rgb(50, 50, 50);
     $primary-bg: $dark;
-    $links: lighten($primary, 15%);
+    $links: lighten($primary, 20%);
     $active: darken($primary, 15%);
     @import 'global';
     // body rules
@@ -16,15 +16,15 @@
 }
 
 .theme-light {
-    $light: #ffebcd;
+    $light: rgb(255, 247, 233);
     $dark: #1E1E1E;
 
-    $primary: rgb(71, 71, 71);
-    $primary-string: "rgb(87, 87, 87)"; //bootstrap4's hamburger
+    $primary: rgb(56, 56, 56);
+    $primary-string: "rgb(56, 56, 56)"; //bootstrap4's hamburger
     $secondary: rgb(199, 199, 199);
     $primary-bg: $light;
-    $links: lighten($primary, 15%);
-    $active: darken($primary, 15%);
+    $links: darken(rgb(246, 159, 29), 10%);
+    $active: darken(rgb(246, 159, 29), 25%);
     @import 'global';
     // body rules
     background-color: $primary-bg;

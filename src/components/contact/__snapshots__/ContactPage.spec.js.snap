@@ -2,7 +2,7 @@
 
 exports[`ContactPage matches snapshot 1`] = `
 <section
-  className="contactPage mx-3"
+  className="contactPage"
 >
   <div
     className="row"

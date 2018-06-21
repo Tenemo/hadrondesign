@@ -16,7 +16,7 @@
 - make info panels pretty, hidden, dont display raw data
 - clear out unused packages
 - reduce bundle.js size: import only parts of bootstrap? drop some polyfills? gzip?
-- client-side pretty form validation popups
+- client-side pretty form validation popups, also: disable zalgo
 - add htmlFor's to labels
 - if the site ever grows to have more scss, they should be imported separately for each section and themes handled differently
 - add FAQ? a few similar questions get asked all the time

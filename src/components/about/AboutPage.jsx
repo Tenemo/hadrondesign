@@ -208,7 +208,7 @@ const AboutPage = () => {
                             Shooting regular films and time-lapses, uploading to YouTube after basic postprocessing
                         </li>
                         <li>
-                            Decent hardware knowledge, ability to set up crypto-currency mining rigs on custom-made racks in no time!
+                            Decent hardware knowledge, ability to set up <a href="/static/images/GPUminer.jpg">crypto-currency mining rigs on custom-made racks</a> in no time!
                         </li>
                         <li>
                             B category (EU) driving license

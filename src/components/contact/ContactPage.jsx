@@ -3,7 +3,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 const ContactPage = () => {
     return (
-        <section className="contactPage mx-3">
+        <section className="contactPage">
             <div className="row">
                 <div className="col-sm-12 my-3 text-center">
                     <h5>
