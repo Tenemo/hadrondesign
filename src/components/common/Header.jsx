@@ -28,7 +28,7 @@ const Header = ({ loading, changeTheme, darkTheme }) => {
                         </li>
                         <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                             <NavLink to="/game" className="nav-link">
-                                Game
+                                Flip&#39;Em
                             </NavLink>
                         </li>
                         <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
