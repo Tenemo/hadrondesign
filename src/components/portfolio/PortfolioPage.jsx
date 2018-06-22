@@ -209,7 +209,6 @@ const PortfolioPage = () => {
                                 height: '390',
                                 width: '640'
                             }}
-                            onReady={this._onReady}
                         />
                     </div>
                 </div>
@@ -221,7 +220,6 @@ const PortfolioPage = () => {
                                 height: '390',
                                 width: '640'
                             }}
-                            onReady={this._onReady}
                         />
                     </div>
                 </div>
@@ -256,7 +254,6 @@ const PortfolioPage = () => {
                                 height: '390',
                                 width: '640'
                             }}
-                            onReady={this._onReady}
                         />
                     </div>
                 </div>
