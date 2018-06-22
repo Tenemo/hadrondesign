@@ -33,13 +33,17 @@ import AboutPage from './about/AboutPage';
 import PortfolioPage from './portfolio/PortfolioPage';
 import GamePage from './game/GamePage';
 
+const scrollUp = () => {
+    window.scrollTo(0, 0);
+    return null;
+};
+
 export class App extends React.Component {
     constructor(props) {
         super(props);
         this.changeTheme = this.changeTheme.bind(this);
     }
     componentDidMount() {
-
         document.body.className = this.props.app.theme;
     }
     changeTheme = (event) => {
@@ -58,6 +62,7 @@ export class App extends React.Component {
             <div>
                 <Header loading={this.props.loading} changeTheme={this.changeTheme} darkTheme={this.props.app.darkTheme} />
                 <div className="container-fluid main-container">
+                    <Route path="/" component={scrollUp} />
                     <Switch>
                         <Route exact path="/" component={AboutPage} />
                         <Route path="/portfolio" component={PortfolioPage} />
