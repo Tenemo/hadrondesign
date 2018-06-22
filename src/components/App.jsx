@@ -5,11 +5,11 @@ import { bindActionCreators } from 'redux';
 import * as appActions from '../actions/appActions';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import ContactPage from './contact/ContactPage';
-import fontawesome from '@fortawesome/fontawesome';
-import { faEnvelope, faBuilding } from '@fortawesome/fontawesome-free-regular';
-import { faMoon, faTrophy, faArrowRight, faUniversity } from '@fortawesome/fontawesome-free-solid';
-import { faGithub, faLinkedin } from '@fortawesome/fontawesome-free-brands';
-fontawesome.library.add( //eslint-disable-line import/no-named-as-default-member
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faEnvelope, faBuilding } from '@fortawesome/free-regular-svg-icons';
+import { faMoon, faTrophy, faArrowRight, faUniversity, faHashtag } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+library.add(
     faMoon,
     faTrophy,
     faArrowRight,
@@ -17,7 +17,8 @@ fontawesome.library.add( //eslint-disable-line import/no-named-as-default-member
     faGithub,
     faLinkedin,
     faBuilding,
-    faUniversity
+    faUniversity,
+    faHashtag
 );
 import toastr from 'toastr';
 toastr.options = {

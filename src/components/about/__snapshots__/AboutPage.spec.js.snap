@@ -51,7 +51,6 @@ exports[`AboutPage matches snapshot 1`] = `
       >
         Back-end
       </h5>
-      <hr />
       <ul
         className="dashed"
       >
@@ -86,7 +85,6 @@ exports[`AboutPage matches snapshot 1`] = `
       >
         Front-end
       </h5>
-      <hr />
       <ul
         className="dashed"
       >
@@ -134,7 +132,6 @@ exports[`AboutPage matches snapshot 1`] = `
       >
         Graphics / Design
       </h5>
-      <hr />
       <ul
         className="dashed"
       >
@@ -169,12 +166,14 @@ exports[`AboutPage matches snapshot 1`] = `
       >
         Tooling
       </h5>
-      <hr />
       <ul
         className="dashed"
       >
         <li>
           Testing with Jest
+        </li>
+        <li>
+          ES6 + Babel
         </li>
         <li>
           Webpack + Sass/Less, Pug

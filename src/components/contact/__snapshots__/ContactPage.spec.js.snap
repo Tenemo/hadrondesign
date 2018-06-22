@@ -25,9 +25,9 @@ exports[`ContactPage matches snapshot 1`] = `
                 "linkedin",
               ]
             }
+            inverse={false}
             listItem={false}
             mask={null}
-            name=""
             pull={null}
             pulse={false}
             rotation={null}
@@ -54,9 +54,9 @@ exports[`ContactPage matches snapshot 1`] = `
                 "github",
               ]
             }
+            inverse={false}
             listItem={false}
             mask={null}
-            name=""
             pull={null}
             pulse={false}
             rotation={null}
@@ -83,9 +83,9 @@ exports[`ContactPage matches snapshot 1`] = `
                 "envelope",
               ]
             }
+            inverse={false}
             listItem={false}
             mask={null}
-            name=""
             pull={null}
             pulse={false}
             rotation={null}
@@ -117,9 +117,9 @@ exports[`ContactPage matches snapshot 1`] = `
               "building",
             ]
           }
+          inverse={false}
           listItem={false}
           mask={null}
-          name=""
           pull={null}
           pulse={false}
           rotation={null}
@@ -159,9 +159,9 @@ exports[`ContactPage matches snapshot 1`] = `
                 "envelope",
               ]
             }
+            inverse={false}
             listItem={false}
             mask={null}
-            name=""
             pull={null}
             pulse={false}
             rotation={null}
@@ -187,9 +187,9 @@ exports[`ContactPage matches snapshot 1`] = `
               "university",
             ]
           }
+          inverse={false}
           listItem={false}
           mask={null}
-          name=""
           pull={null}
           pulse={false}
           rotation={null}

@@ -11,6 +11,7 @@
 ### for later, maybe
 - fontawesome-react BLOAT :c import only used icons they said, tree-shaking they said, it'll be okay they said
 - testing client/server
+- add JSDoc wherever it's missing, on client maybe too
 - npm cache has it out for me, no amount of reinstalls fix EPERM error, I should find some other solution than rimrafing .cache on every start
 - prevent users from losing their game and score if the first request fails
 - make info panels pretty, hidden, dont display raw data

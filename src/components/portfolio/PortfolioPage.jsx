@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import Gallery from 'react-grid-gallery';
 import { imagesOther, imagesArbor } from './images';
 import YouTube from 'react-youtube';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const PortfolioPage = () => {
     return (
@@ -44,7 +44,7 @@ const PortfolioPage = () => {
                         <li>Dark theme! I love dark themes (and f.lux)</li>
                     </ul>
                     <p>
-                        If you consider yourself great at puzzle games, give <Link to="/game">Flip&#39;Em</Link> a try on larger board sizes! ...If you don&#39;t, give it a shot anyway.
+                        If you consider yourself great at puzzle games, give <Link to="/game">Flip&#39;Em</Link> a try on larger board sizes! ...If you don&#39;t, give it a shot anyway:
                         </p>
                     <ul className="dashed">
                         <li>Fully responsive, written with mobile devices in mind</li>

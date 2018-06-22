@@ -22,7 +22,6 @@ const AboutPage = () => {
                     <h5 className="text-center">
                         Back-end
                     </h5>
-                    <hr />
                     <ul className="dashed">
                         <li>
                             Node.js
@@ -51,7 +50,6 @@ const AboutPage = () => {
                     <h5 className="text-center">
                         Front-end
                     </h5>
-                    <hr />
                     <ul className="dashed">
                         <li>
                             HTML5 + CSS3
@@ -97,7 +95,6 @@ const AboutPage = () => {
                     <h5 className="text-center">
                         Graphics / Design
                     </h5>
-                    <hr />
                     <ul className="dashed">
                         <li>
                             Brand design: creating logos, choosing color schemes
@@ -129,10 +126,12 @@ const AboutPage = () => {
                     <h5 className="text-center">
                         Tooling
                     </h5>
-                    <hr />
                     <ul className="dashed">
                         <li>
                             Testing with Jest
+                        </li>
+                        <li>
+                            ES6 + Babel
                         </li>
                         <li>
                             Webpack + Sass/Less, Pug
