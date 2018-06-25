@@ -29,24 +29,24 @@ browserSync({
                 publicPath: config.output.publicPath,
 
                 // These settings suppress noisy webpack output so only errors are displayed to the console.
-                // noInfo: true,
+                noInfo: true,
                 // quiet: false,
-                // stats: {
-                //     hash: false,
-                //     version: false,
-                //     timings: false,
-                //     assets: false,
-                //     chunks: false,
-                //     modules: false,
-                //     reasons: false,
-                //     children: false,
-                //     source: false,
-                //     errors: false,
-                //     errorDetails: false,
-                //     warnings: false,
-                //     publicPath: false
-                // }
-                //stats: 'none'
+                stats: {
+                    hash: false,
+                    version: false,
+                    timings: false,
+                    assets: false,
+                    chunks: false,
+                    modules: false,
+                    reasons: false,
+                    children: false,
+                    source: false,
+                    errors: true,
+                    errorDetails: false,
+                    warnings: false,
+                    publicPath: false
+                }
+                // stats: 'none'
 
                 // for other settings see
                 // https://webpack.js.org/guides/development/#using-webpack-dev-middleware

@@ -126,6 +126,7 @@ $flippedTile: $secondary;
         }
         &.disabled {
             .tileInside {
+                pointer-events: none;
                 transition: none !important;
             }
         }

@@ -32,9 +32,9 @@ const AboutPage = () => {
                         <li>
                             PostgreSQL + Sequelize ORM
                         </li>
-                        <li>
+                        {/* <li>
                             Deployment on AWS with docker
-                        </li>
+                        </li> */}
                         <li>
                             Apache, .htaccess
                         </li>
@@ -256,7 +256,7 @@ const AboutPage = () => {
                             <h6>Web Developer / Graphic Designer / Interpreter / Translator</h6>
                         </div>
                         <div className="col-sm-6 text-sm-right">
-                            <span>Jun 2014 - December 2017</span>
+                            <span>Oct 2014 - December 2017</span>
                         </div>
                     </div>
                     <span className="font-italic">Arbor Sp. z o. o.</span>

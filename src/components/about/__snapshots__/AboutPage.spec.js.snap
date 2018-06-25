@@ -64,9 +64,6 @@ exports[`AboutPage matches snapshot 1`] = `
           PostgreSQL + Sequelize ORM
         </li>
         <li>
-          Deployment on AWS with docker
-        </li>
-        <li>
           Apache, .htaccess
         </li>
         <li>
@@ -364,7 +361,7 @@ exports[`AboutPage matches snapshot 1`] = `
           className="col-sm-6 text-sm-right"
         >
           <span>
-            Jun 2014 - December 2017
+            Oct 2014 - December 2017
           </span>
         </div>
       </div>

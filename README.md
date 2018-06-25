@@ -10,8 +10,7 @@
 
 ### for later, maybe
 - fontawesome-react BLOAT :c import only used icons they said, tree-shaking they said, it'll be okay they said
-- scroll to the top after changing route
-- testing client/server
+- testing client/server, also jest gets stuck on the few example tests mysteriously now
 - add JSDoc wherever it's missing, on client maybe too
 - npm cache has it out for me, no amount of reinstalls fix EPERM error, I should find some other solution than rimrafing .cache on every start
 - prevent users from losing their game and score if the first request fails
@@ -22,6 +21,7 @@
 - add htmlFor's to labels
 - if the site ever grows to have more scss, they should be imported separately for each section and themes handled differently
 - add FAQ? a few similar questions get asked all the time
+- react-youtube throwing some console errors, no impact, not sure if fixable
 
 ### for much later and probably not
 - how to play modal pop-up, GIF with example

@@ -36,7 +36,7 @@ const PortfolioPage = () => {
                         </p>
                     <ul className="dashed">
                         <li>React.js + Redux + redux-thunk</li>
-                        <li>AWS + docker</li>
+                        {/* <li>AWS + docker</li> why is aws making everything so complicated, it worked 3 days ago, apparently i dont know anything about aws or docker*/}
                         <li>Webpack 4</li>
                         <li>Sass</li>
                         <li>Bootstrap 4</li>

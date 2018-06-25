@@ -36,7 +36,7 @@ export function newGame(newSize, easyMode, seed, previousId) {
                     preventDuplicates: true
                 });
                 dispatch(newGameSuccess(newGame));
-                // to wait for DOM a little bit and prevent flip animation
+                // wait for DOM a tiny bit to prevent flip animation
                 setTimeout(() => {
                     dispatch(unlockBoard());
                 }, 20);
