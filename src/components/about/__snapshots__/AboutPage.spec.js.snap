@@ -167,9 +167,6 @@ exports[`AboutPage matches snapshot 1`] = `
         className="dashed"
       >
         <li>
-          Testing with Jest
-        </li>
-        <li>
           ES6 + Babel
         </li>
         <li>

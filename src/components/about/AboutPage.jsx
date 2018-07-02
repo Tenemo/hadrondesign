@@ -127,9 +127,9 @@ const AboutPage = () => {
                         Tooling
                     </h5>
                     <ul className="dashed">
-                        <li>
+                        {/* <li>
                             Testing with Jest
-                        </li>
+                        </li> */}
                         <li>
                             ES6 + Babel
                         </li>
