@@ -12,7 +12,7 @@
 - fontawesome-react BLOAT :c import only used icons they said, tree-shaking they said, it'll be okay they said
 - reduce bundle.js size: import only parts of bootstrap? drop some polyfills? gzip? fontawesome, come on
 - testing client/server, also jest gets mysteriously stuck on the few simple tests after latest update now
-- add JSDoc wherever it's missing, client maybe too
+- add JSDoc wherever it's missing, client maybe too? generate documentation
 - npm cache has it out for me, no amount of reinstalls fix EPERM error, find some other solution, I shouldnt rimraf .cache on every start (or should I)
 - prevent users from losing their game and score if the first request fails
 - make info panels pretty, hidden, dont display raw data
@@ -24,6 +24,7 @@
 - react-youtube throwing some console errors, it has no impact on anything, not sure if fixable
 
 ### for much later and probably not
+- Jenkins?
 - how to play modal pop-up, GIF with example
 - board max. height for wide display and big board sizes (not sure if it's a good change or having big tiles and scrolling down/up is actually better)
 - option to show more high scores, show highlighted row with last game played to see where exactly the user placed
