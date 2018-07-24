@@ -32,7 +32,10 @@ import Header from './common/Header';
 import AboutPage from './about/AboutPage';
 import PortfolioPage from './portfolio/PortfolioPage';
 import GamePage from './game/GamePage';
-
+if (process.env.NODE_ENV !== 'production') {
+    const {whyDidYouUpdate} = require('why-did-you-update')
+    whyDidYouUpdate(React);
+  }
 const scrollUp = () => {
     window.scrollTo(0, 0);
     return null;
