@@ -311,7 +311,7 @@ exports[`AboutPage matches snapshot 1`] = `
           className="col-sm-6 text-sm-right"
         >
           <span>
-            May 2016 - Present
+            Dec 2017 - Present
           </span>
         </div>
       </div>
@@ -423,7 +423,7 @@ exports[`AboutPage matches snapshot 1`] = `
           className="col-sm-6 text-sm-right"
         >
           <span>
-            Aug 2012 - May 2016
+            Aug 2012 - Oct 2014
           </span>
         </div>
       </div>

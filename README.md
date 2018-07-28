@@ -22,6 +22,9 @@
 - if the site ever grows to have more scss, they should be imported separately for each section, redo themes, I think it also messes up map files when viewing in browser
 - add FAQ? similar questions get asked all the time
 - react-youtube throwing some console errors, it has no impact on anything, not sure if fixable
+- flashing text only in dark mode, something to do with the colors, check different browsers
+- componentWillUnmount() cancel requests?
+- remember window position and scroll to it after theme change, to avoid jump on rerender, preferably loading overlay inbetween
 
 ### for much later and probably not
 - how to play modal pop-up, GIF with example

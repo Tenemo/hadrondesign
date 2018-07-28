@@ -229,7 +229,7 @@ const AboutPage = () => {
                             <h6>Full Stack Web Developer / Translator</h6>
                         </div>
                         <div className="col-sm-6 text-sm-right">
-                            <span>May 2016 - Present</span>
+                            <span>Dec 2017 - Present</span>
                         </div>
                     </div>
                     <span className="font-italic">Hadron Design Piotr Piech</span>
@@ -301,7 +301,7 @@ const AboutPage = () => {
                             <h6>Web Developer / Graphic Designer</h6>
                         </div>
                         <div className="col-sm-6 text-sm-right">
-                            <span>Aug 2012 - May 2016</span>
+                            <span>Aug 2012 - Oct 2014</span>
                         </div>
                     </div>
                     <span className="font-italic">Freelance</span>

@@ -2,7 +2,7 @@ import * as types from './actionTypes';
 import { beginAjaxCall, ajaxCallError } from './ajaxStatusActions';
 import toastr from 'toastr';
 
-const api = 'http://leczna.online:8080';
+const api = 'http://serene-thicket-97123.herokuapp.com:8080';
 
 export function newGame(newSize, easyMode, seed, previousId) {
     return dispatch => {
@@ -36,7 +36,7 @@ export function newGame(newSize, easyMode, seed, previousId) {
                     preventDuplicates: true
                 });
                 dispatch(newGameSuccess(newGame));
-                // wait for DOM a tiny bit to prevent flip animation
+                // wait for DOM a tiny bit to prevent flip animation, otherwise it bugs out
                 setTimeout(() => {
                     dispatch(unlockBoard());
                 }, 20);

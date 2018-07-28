@@ -39,10 +39,10 @@ const scrollUp = () => {
 };
 
 export class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.changeTheme = this.changeTheme.bind(this);
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.changeTheme = this.changeTheme.bind(this);
+    // }
     componentDidMount() {
         document.body.className = this.props.app.theme;
     }

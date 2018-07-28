@@ -10,6 +10,7 @@ import { AppContainer } from 'react-hot-loader';
 import Root from './components/Root';
 import { getHighScores } from './actions/gameActions';
 import { persistStore } from 'redux-persist';
+
 const store = configureStore();
 let persistor = persistStore(store);
 store.dispatch(getHighScores());
