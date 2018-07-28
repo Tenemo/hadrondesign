@@ -1,6 +1,6 @@
 {
     "name": "hadrondesign",
-    "version": "1.0.3",
+    "version": "1.0.0",
     "description": "",
     "scripts": {
         "start-message": "babel-node config/startMessage.js",
@@ -14,7 +14,7 @@
         "clean-cache": "rimraf node_modules/.cache",
         "remove-dist": "rimraf ./dist",
         "prebuild": "npm run lint && npm run test && npm run clean-dist",
-        "build": "babel-node config/build.js",
+        "build": "babel-node config/build.js && npm run open:dist",
         "test": "jest",
         "test:watch": "jest --watch",
         "test:coverage": "npm run test -- --coverage "
