@@ -45,10 +45,9 @@ export default {
         // }),
         new HtmlWebpackPlugin({
             template: 'src/index.pug',
-            title: 'HD',
+            title: 'piech.dev',
             filename: 'index.html',
             inject: 'true',
-            favicon: './src/favicon.ico'
         })
     ],
     module: {

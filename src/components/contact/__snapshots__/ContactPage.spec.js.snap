@@ -70,7 +70,7 @@ exports[`ContactPage matches snapshot 1`] = `
       </h5>
       <h5>
         <a
-          href="mailto:piotr@hadron.design"
+          href="mailto:piotr@piech.dev"
         >
           <FontAwesomeIcon
             border={false}
@@ -94,130 +94,9 @@ exports[`ContactPage matches snapshot 1`] = `
             symbol={false}
             transform={null}
           />
-           piotr@hadron.design
+           piotr@piech.dev
         </a>
       </h5>
-    </div>
-  </div>
-  <div
-    className="row my-3"
-  >
-    <div
-      className="col-sm-9 offset-sm-1 col-md-7 offset-md-2"
-    >
-      <h5>
-        <FontAwesomeIcon
-          border={false}
-          className=""
-          fixedWidth={false}
-          flip={null}
-          icon={
-            Array [
-              "far",
-              "building",
-            ]
-          }
-          inverse={false}
-          listItem={false}
-          mask={null}
-          pull={null}
-          pulse={false}
-          rotation={null}
-          size={null}
-          spin={false}
-          symbol={false}
-          transform={null}
-        />
-         Company Info
-      </h5>
-      <hr />
-      <p>
-        <span
-          className="font-weight-bold"
-        >
-          Hadron Design Piotr Piech 
-          <br />
-          <br />
-        </span>
-        ul. Gwarków 4/21, 21-010 Łęczna, Poland 
-        <br />
-        <br />
-        NIP [EU VAT ID]: PL5050125887 
-        <br />
-        <br />
-        <a
-          href="mailto:piotr@hadron.design"
-        >
-          <FontAwesomeIcon
-            border={false}
-            className=""
-            fixedWidth={false}
-            flip={null}
-            icon={
-              Array [
-                "far",
-                "envelope",
-              ]
-            }
-            inverse={false}
-            listItem={false}
-            mask={null}
-            pull={null}
-            pulse={false}
-            rotation={null}
-            size={null}
-            spin={false}
-            symbol={false}
-            transform={null}
-          />
-           kontakt@hadron.design 
-          <br />
-          <br />
-        </a>
-      </p>
-      <h5>
-        <FontAwesomeIcon
-          border={false}
-          className=""
-          fixedWidth={false}
-          flip={null}
-          icon={
-            Array [
-              "fas",
-              "university",
-            ]
-          }
-          inverse={false}
-          listItem={false}
-          mask={null}
-          pull={null}
-          pulse={false}
-          rotation={null}
-          size={null}
-          spin={false}
-          symbol={false}
-          transform={null}
-        />
-         Bank Transfer Details
-      </h5>
-      <hr />
-      <p>
-        IBAN: PL75 1140 2004 0000 3202 7619 2059 
-        <br />
-        <br />
-        BIC/SWIFT: BREXPLPWMBK 
-        <br />
-        <br />
-        SORT CODE: 11402004  
-        <br />
-        <br />
-        Bank name: mBank S.A. FORMERLY BRE BANK S.A. (RETAIL BANKING) LODZ  
-        <br />
-        <br />
-        Bank address: Skrytka pocztowa 2108, 90-959 Łódź 2 
-        <br />
-        <br />
-      </p>
     </div>
   </div>
 </section>

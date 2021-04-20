@@ -2,7 +2,7 @@ import * as types from './actionTypes';
 import { beginAjaxCall, ajaxCallError } from './ajaxStatusActions';
 import toastr from 'toastr';
 
-const api = 'http://serene-thicket-97123.herokuapp.com';
+const api = 'https://serene-thicket-97123.herokuapp.com';
 
 export function newGame(newSize, easyMode, seed, previousId) {
     return dispatch => {

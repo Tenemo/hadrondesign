@@ -17,39 +17,10 @@ const ContactPage = () => {
                         </a>
                     </h5>
                     <h5>
-                        <a href="mailto:piotr@hadron.design">
-                            <FontAwesomeIcon icon={['far', 'envelope']} /> piotr@hadron.design
+                        <a href="mailto:piotr@piech.dev">
+                            <FontAwesomeIcon icon={['far', 'envelope']} /> piotr@piech.dev
                         </a>
                     </h5>
-                </div>
-            </div>
-            <div className="row my-3">
-                <div className="col-sm-9 offset-sm-1 col-md-7 offset-md-2">
-                    <h5>
-                        <FontAwesomeIcon icon={['far', 'building']} /> Company Info
-                    </h5>
-                    <hr />
-                    <p>
-                        <span className="font-weight-bold">
-                            Hadron&nbsp;Design Piotr&nbsp;Piech <br /><br />
-                        </span>
-                        ul.&nbsp;Gwarków&nbsp;4/21, 21-010&nbsp;Łęczna, Poland <br /><br />
-                        NIP&nbsp;[EU&nbsp;VAT&nbsp;ID]: PL5050125887 <br /><br />
-                        <a href="mailto:piotr@hadron.design">
-                            <FontAwesomeIcon icon={['far', 'envelope']} /> kontakt@hadron.design <br /><br />
-                        </a>
-                    </p>
-                    <h5>
-                        <FontAwesomeIcon icon={['fas', 'university']} /> Bank Transfer Details
-                    </h5>
-                    <hr />
-                    <p>
-                        IBAN: PL75 1140&nbsp;2004 0000&nbsp;3202 7619&nbsp;2059 <br /><br />
-                        BIC/SWIFT: BREXPLPWMBK <br /><br />
-                        SORT CODE: 11402004  <br /><br />
-                        Bank name: mBank&nbsp;S.A. FORMERLY BRE&nbsp;BANK S.A. (RETAIL BANKING) LODZ  <br /><br />
-                        Bank address: Skrytka pocztowa&nbsp;2108, 90-959 Łódź&nbsp;2 <br /><br />
-                    </p>
                 </div>
             </div>
         </section>

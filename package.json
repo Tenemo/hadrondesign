@@ -100,7 +100,7 @@
         "jest": "^23.4.2",
         "jest-cli": "^23.4.2",
         "mini-css-extract-plugin": "^0.4.1",
-        "node-sass": "^5.0.0",
+        "node-sass": "^4.14.1",
         "postcss-loader": "^2.1.6",
         "pug": "^2.0.3",
         "pug-loader": "^2.4.0",

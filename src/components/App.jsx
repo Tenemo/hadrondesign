@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as appActions from '../actions/appActions';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import ContactPage from './contact/ContactPage';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope, faBuilding } from '@fortawesome/free-regular-svg-icons';
@@ -29,8 +29,6 @@ toastr.options = {
     positionClass: 'toast-top-left'
 };
 import Header from './common/Header';
-import AboutPage from './about/AboutPage';
-import PortfolioPage from './portfolio/PortfolioPage';
 import GamePage from './game/GamePage';
 
 const scrollUp = () => {
@@ -64,10 +62,9 @@ export class App extends React.Component {
                 <div className="container-fluid main-container">
                     <Route path="/" component={scrollUp} />
                     <Switch>
-                        <Route exact path="/" component={AboutPage} />
-                        <Route path="/portfolio" component={PortfolioPage} />
-                        <Route path="/game" component={GamePage} />
-                        <Route path="/contact" component={ContactPage} />
+                        <Route path="/about" component={ContactPage} />
+                        <Route path="/flip-tiles" component={GamePage} />
+                        <Route render={() => <Redirect push to="/flip-tiles"/>} />
                     </Switch>
                 </div>
             </div>

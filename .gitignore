@@ -30,3 +30,4 @@ dist/
 # temporary and local development files
 dev/
 .vscode/
+temp/
