@@ -12,7 +12,6 @@ export default {
     entry: [
         'babel-polyfill',
         //'eventsource-polyfill', // necessary for hot reloading with IE
-        'react-hot-loader/patch',
         'webpack-hot-middleware/client',
         'react', // Include this to enforce order
         'react-dom', // Include this to enforce order
